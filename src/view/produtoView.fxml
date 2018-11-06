@@ -2,14 +2,15 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.produtoController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.produtoController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="600.0" minWidth="1000.0" style="-fx-background-color: #ECF0F5;" VBox.vgrow="ALWAYS">
          <children>
@@ -25,7 +26,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXTreeTableView layoutX="64.0" layoutY="115.0" prefHeight="425.0" prefWidth="925.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0" />
             <JFXButton fx:id="btnNovo" layoutX="536.0" layoutY="552.0" onAction="#newProduto" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Novo" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="340.0" />
             <JFXButton fx:id="btnEditar" layoutX="646.0" layoutY="552.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="230.0" />
             <JFXButton fx:id="btnRemover" layoutX="756.0" layoutY="552.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
@@ -34,6 +34,14 @@
                   <Font size="14.0" />
                </font></JFXTextField>
             <JFXButton layoutX="890.0" layoutY="552.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #FC7404;" text="Voltar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <TableView fx:id="tabelaProduto" layoutX="63.0" layoutY="115.0" prefHeight="425.0" prefWidth="927.0">
+              <columns>
+                <TableColumn fx:id="colunaCodProd" prefWidth="75.0" text="Código" />
+                <TableColumn fx:id="colunaNomeProd" prefWidth="346.0" text="Produto/Serviço" />
+                  <TableColumn fx:id="colunaValorProd" minWidth="0.0" prefWidth="129.0" text="Valor Unitário" />
+                  <TableColumn fx:id="colunaDescProd" prefWidth="376.0" text="Descrição" />
+              </columns>
+            </TableView>
          </children>
     </AnchorPane>
   </children>
