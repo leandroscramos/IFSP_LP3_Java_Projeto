@@ -10,11 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.produtoModel;
 import dao.produtoDAO;
 
+import javax.swing.table.TableColumn;
 import javax.swing.text.TableView;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +28,9 @@ public class produtoController {
 
     @FXML
     private TableView<produtoModel> tableProduto;
+
+    @FXML
+    private TableColumn colunaCodProd, colunaNomeProd, colunaValorProd, colunaDescProd;
 
     @FXML
     private JFXButton btnNovo;
@@ -56,9 +61,10 @@ public class produtoController {
             listaProduto.add(new produtoModel(pm.getCodProd(), pm.getNomeProd(), pm.getvUnitProd(), pm.getDescProd()));
         });
 
-        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colCelular.setCellValueFactory(new PropertyValueFactory<>("celular"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colunaCodProd.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaNomeProd.setCellValueFactory(new PropertyValueFactory<>("celular"));
+        colunaValorProd.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colunaDescProd.setCellVal;
         tbAlunos.setItems(listaAlunos);
     }
 }
