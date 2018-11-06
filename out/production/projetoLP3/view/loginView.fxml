@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginController">
+   <children>
+      <Pane prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <JFXTextField fx:id="txtLogin" focusColor="#dc0404" layoutX="75.0" layoutY="74.0" prefHeight="30.0" prefWidth="250.0" promptText="Usuário" unFocusColor="#1a3762" />
+            <JFXPasswordField fx:id="txtPassword" focusColor="#dc0404" layoutX="75.0" layoutY="110.0" prefHeight="30.0" prefWidth="250.0" promptText="Senha" unFocusColor="#1a3762" />
+            <JFXButton fx:id="btnLogin" layoutX="75.0" layoutY="165.0" onAction="#login" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #1A3762;" text="Login" textFill="WHITE" />
+            <JFXButton fx:id="btnCancel" layoutX="76.0" layoutY="199.0" onAction="#cancel" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #CC141C;" text="Cancel" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
