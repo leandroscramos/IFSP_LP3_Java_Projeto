@@ -1,7 +1,9 @@
 package controller;
 
+import application.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -31,16 +33,16 @@ public class ProdutoController implements Initializable {
     private TableView<ProdutoModel> tableProduto;
 
     @FXML
-    private TableColumn<?, ?> colunaCodProd;
+    private TableColumn<ProdutoModel, Integer> colunaCodProd;
 
     @FXML
-    private TableColumn<?, ?> colunaNomeProd;
+    private TableColumn<ProdutoModel, String> colunaNomeProd;
 
     @FXML
-    private TableColumn<?, ?> colunaValorProd;
+    private TableColumn<ProdutoModel, Double> colunaValorProd;
 
     @FXML
-    private TableColumn<?, ?> colunaDescProd;
+    private TableColumn<ProdutoModel, String> colunaDescProd;
 
     @FXML
     private JFXButton btnNovo;
@@ -51,6 +53,9 @@ public class ProdutoController implements Initializable {
     @FXML
     private JFXButton btnRemover;
 
+    @FXML
+    private JFXButton btnCancelar;
+
     ProdutoDAO pd = new ProdutoDAO();
     ProdutoModel pm = new ProdutoModel();
     ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
@@ -60,6 +65,10 @@ public class ProdutoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         pmArray = pd.readAllProdutos();
         preencherTabela(pmArray);
+    }
+
+    public void cancelar() throws IOException {
+        Main.sceneChange("sceneHome");
     }
 
     public void newProduto() throws IOException {
@@ -73,14 +82,16 @@ public class ProdutoController implements Initializable {
     }
 
     public void preencherTabela(ArrayList<ProdutoModel> pmArray) {
+
         pmArray.forEach((pm) -> {
             listaProduto.add(new ProdutoModel(pm.getCodProd(), pm.getNomeProd(), pm.getvUnitProd(), pm.getDescProd()));
         });
 
-        colunaCodProd.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-        colunaNomeProd.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colunaValorProd.setCellValueFactory(new PropertyValueFactory<>("valor"));
-        colunaDescProd.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        colunaCodProd.setCellValueFactory(new PropertyValueFactory<>("codProd"));
+        colunaNomeProd.setCellValueFactory(new PropertyValueFactory<>("nomeProd"));
+        colunaValorProd.setCellValueFactory(new PropertyValueFactory<>("vUnitProd"));
+        colunaDescProd.setCellValueFactory(new PropertyValueFactory<>("descProd"));
         tableProduto.setItems(listaProduto);
+
     }
 }

@@ -13,5 +13,6 @@ public class AgendaController {
 
     public void cancelar() throws IOException {
         Main.sceneChange("sceneHome");
+
     }
 }

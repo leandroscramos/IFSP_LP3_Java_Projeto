@@ -4,6 +4,7 @@ import connection.ConnectionFactory;
 import model.ProdutoModel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,39 +34,6 @@ public class ProdutoDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-    /*
-    public List<ProdutoModel> read() {
-
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
-        List<ProdutoModel> produtos = new ArrayList<>();
-
-        try {
-
-            stmt = con.prepareStatement("select * from produto");
-            rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                ProdutoModel produto = new ProdutoModel();
-                produto.setCodProd(rs.getInt("codigo"));
-                produto.setNomeProd(rs.getString("nome"));
-                produto.setvUnitProd(rs.getDouble("valor"));
-                produto.setDescProd(rs.getString("descricao"));
-                produtos.add(produto);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            ConnectionFactory.closeConnection(con, stmt, rs);
-        }
-
-        return produtos;
-
-    }
-    */
 
     public ArrayList<ProdutoModel> readAllProdutos(){
 
@@ -77,7 +45,6 @@ public class ProdutoDAO {
         ProdutoModel pmObjeto;
 
         try{
-
             stmt = con.prepareStatement("select codigo, nome, valor, descricao from produto");
             rs = stmt.executeQuery();
 
@@ -88,6 +55,7 @@ public class ProdutoDAO {
                 pmObjeto.setvUnitProd(rs.getDouble("valor"));
                 pmObjeto.setDescProd(rs.getString("descricao"));
                 pmArray.add(pmObjeto);
+
             }
 
         }catch(SQLException ex){
