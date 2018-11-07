@@ -25,7 +25,8 @@ public class ConnectionFactory {
         }
     }
 
-    public void executeSql(String sql){
+    public void executeSql (String sql){
+
         try {
             stmt = con.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
             rs = stmt.executeQuery(sql);

@@ -23,17 +23,17 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         palco = primaryStage;
 
-        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../view/loginView.fxml"));
+        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
         sceneLogin = new Scene(fxmlLogin);
-        Parent fxmlHome = FXMLLoader.load(getClass().getResource("../view/homeView.fxml"));
+        Parent fxmlHome = FXMLLoader.load(getClass().getResource("../view/HomeView.fxml"));
         sceneHome = new Scene(fxmlHome);
-        Parent fxmlAgenda = FXMLLoader.load(getClass().getResource("../view/agendaView.fxml"));
+        Parent fxmlAgenda = FXMLLoader.load(getClass().getResource("../view/AgendaView.fxml"));
         sceneAgenda = new Scene(fxmlAgenda);
-        Parent fxmlPessoas = FXMLLoader.load(getClass().getResource("../view/pessoaView.fxml"));
+        Parent fxmlPessoas = FXMLLoader.load(getClass().getResource("../view/PessoaView.fxml"));
         scenePessoas = new Scene(fxmlPessoas);
-        Parent fxmlProdutos = FXMLLoader.load(getClass().getResource("../view/produtoView.fxml"));
+        Parent fxmlProdutos = FXMLLoader.load(getClass().getResource("../view/ProdutoView.fxml"));
         sceneProdutos = new Scene(fxmlProdutos);
-        Parent fxmlVendas = FXMLLoader.load(getClass().getResource("../view/vendasView.fxml"));
+        Parent fxmlVendas = FXMLLoader.load(getClass().getResource("../view/VendasView.fxml"));
         sceneVendas = new Scene(fxmlVendas);
 
         palco.setTitle("SisGS - Sistema de Gerenciamento de Salões de Beleza");

@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class pessoaModel {
+public class PessoaModel {
     private String cpf;
     private String nome;
     private String sexo;
@@ -12,11 +12,11 @@ public class pessoaModel {
     private String email;
     private String celular;
 
-    public pessoaModel(){
+    public PessoaModel(){
 
     }
 
-    public pessoaModel(String cpf, String nome, String sexo, Date data_nasc, String isFuncionario, String email, String celular) {
+    public PessoaModel(String cpf, String nome, String sexo, Date data_nasc, String isFuncionario, String email, String celular) {
         this.cpf = cpf;
         this.nome = nome;
         this.sexo = sexo;

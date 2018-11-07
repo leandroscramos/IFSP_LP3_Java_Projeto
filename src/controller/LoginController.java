@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class loginController {
+public class LoginController {
 
     @FXML
     private JFXTextField txtLogin;

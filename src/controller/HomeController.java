@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import java.awt.*;
 import java.io.IOException;
 
-public class homeController {
+public class HomeController {
 
     @FXML
     private JFXButton btnAgenda;

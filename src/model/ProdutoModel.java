@@ -1,17 +1,17 @@
 package model;
 
-public class produtoModel {
+public class ProdutoModel {
 
     private Integer codProd;
     private String nomeProd;
     private Double vUnitProd;
     private String descProd;
 
-    public produtoModel(){
+    public ProdutoModel(){
 
     }
 
-    public produtoModel(Integer codProd, String nomeProd, Double vUnitProd, String descProd) {
+    public ProdutoModel(Integer codProd, String nomeProd, Double vUnitProd, String descProd) {
         this.codProd = codProd;
         this.nomeProd = nomeProd;
         this.vUnitProd = vUnitProd;

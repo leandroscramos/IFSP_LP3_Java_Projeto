@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-public class vendasModel {
+public class VendasModel {
     private Integer codVenda;
     private String cliente;
     private Integer qtde;
@@ -14,11 +14,11 @@ public class vendasModel {
     private String pagVenda;
     private Double subTotal;
 
-    public vendasModel(){
+    public VendasModel(){
 
     }
 
-    public vendasModel(Integer codVenda, String cliente, Integer qtde, String produto, Double vUnitProd, Double vTotalProd, List listaProd, String obsVenda, String pagVenda, Double subTotal) {
+    public VendasModel(Integer codVenda, String cliente, Integer qtde, String produto, Double vUnitProd, Double vTotalProd, List listaProd, String obsVenda, String pagVenda, Double subTotal) {
         this.codVenda = codVenda;
         this.cliente = cliente;
         this.qtde = qtde;

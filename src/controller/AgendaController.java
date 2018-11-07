@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class agendaController {
+public class AgendaController {
 
     @FXML
     private JFXButton btnCancelar;

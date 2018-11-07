@@ -3,16 +3,14 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.produtoModel;
-import dao.produtoDAO;
+import model.ProdutoModel;
+import dao.ProdutoDAO;
 
 import java.io.IOException;
 
-public class produtoCadController {
+public class ProdutoCadController {
 
     @FXML
     private TextField txtCodProd;
@@ -35,8 +33,8 @@ public class produtoCadController {
 
     public void inserirProduto(ActionEvent e) throws IOException {
 
-        produtoModel pm = new produtoModel();
-        produtoDAO pd = new produtoDAO();
+        ProdutoModel pm = new ProdutoModel();
+        ProdutoDAO pd = new ProdutoDAO();
 
         pm.setNomeProd(txtNomeProd.getText());
         pm.setvUnitProd(Double.parseDouble(txtValorProd.getText()));

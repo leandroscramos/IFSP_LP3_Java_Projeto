@@ -3,7 +3,7 @@ package model;
 import java.sql.Time;
 import java.util.Date;
 
-public class agendaModel {
+public class AgendaModel {
 
     private Integer codAg;
     private Date dataNewAg;
@@ -11,11 +11,11 @@ public class agendaModel {
     private String servico;
     private String cliente;
 
-    public agendaModel(){
+    public AgendaModel(){
 
     }
 
-    public agendaModel(Integer codAg, Date dataNewAg, Time horaNewAg, String servico, String cliente) {
+    public AgendaModel(Integer codAg, Date dataNewAg, Time horaNewAg, String servico, String cliente) {
         this.codAg = codAg;
         this.dataNewAg = dataNewAg;
         this.horaNewAg = horaNewAg;
