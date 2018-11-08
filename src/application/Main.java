@@ -28,39 +28,57 @@ public class Main extends Application {
         palco.setTitle("SisGS - Sistema de Gerenciamento de Salões de Beleza");
         palco.setScene(sceneLogin);
         palco.show();
-
-        Parent fxmlHome = FXMLLoader.load(getClass().getResource("../view/HomeView.fxml"));
-        sceneHome = new Scene(fxmlHome);
-        Parent fxmlAgenda = FXMLLoader.load(getClass().getResource("../view/AgendaView.fxml"));
-        sceneAgenda = new Scene(fxmlAgenda);
-        Parent fxmlPessoas = FXMLLoader.load(getClass().getResource("../view/PessoaView.fxml"));
-        scenePessoas = new Scene(fxmlPessoas);
-        Parent fxmlProdutos = FXMLLoader.load(getClass().getResource("../view/ProdutoView.fxml"));
-        sceneProdutos = new Scene(fxmlProdutos);
-        Parent fxmlVendas = FXMLLoader.load(getClass().getResource("../view/VendasView.fxml"));
-        sceneVendas = new Scene(fxmlVendas);
-
     }
 
-    public static void sceneChange(String cena) {
+    public static void loadHome() throws Exception{
+        Parent fxmlHome = FXMLLoader.load(Main.class.getResource("../view/HomeView.fxml"));
+        sceneHome = new Scene(fxmlHome);
+    }
+
+    public static void loadAgenda() throws Exception{
+        Parent fxmlAgenda = FXMLLoader.load(Main.class.getResource("../view/AgendaView.fxml"));
+        sceneAgenda = new Scene(fxmlAgenda);
+    }
+
+    public static void loadPessoas() throws Exception{
+        Parent fxmlPessoas = FXMLLoader.load(Main.class.getResource("../view/PessoaView.fxml"));
+        scenePessoas = new Scene(fxmlPessoas);
+    }
+
+    public static void loadProdutos() throws Exception{
+        Parent fxmlProdutos = FXMLLoader.load(Main.class.getResource("../view/ProdutoView.fxml"));
+        sceneProdutos = new Scene(fxmlProdutos);
+    }
+
+    public static void loadVendas() throws Exception{
+        Parent fxmlVendas = FXMLLoader.load(Main.class.getResource("../view/VendasView.fxml"));
+        sceneVendas = new Scene(fxmlVendas);
+    }
+
+    public static void sceneChange(String cena) throws Exception {
         switch (cena){
             case "sceneLogin":
                 palco.setScene(sceneLogin);
                 break;
             case "sceneHome":
+                loadHome();
                 palco.setScene(sceneHome);
                 palco.centerOnScreen();
                 break;
             case "sceneAgenda":
+                loadAgenda();
                 palco.setScene(sceneAgenda);
                 break;
             case "scenePessoas":
+                loadPessoas();
                 palco.setScene(scenePessoas);
                 break;
             case "sceneProdutos":
+                loadProdutos();
                 palco.setScene(sceneProdutos);
                 break;
             case "sceneVendas":
+                loadVendas();
                 palco.setScene(sceneVendas);
                 break;
             /*

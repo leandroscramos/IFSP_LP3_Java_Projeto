@@ -28,7 +28,7 @@ public class LoginController {
     @FXML
     private JFXButton btnCancel;
 
-    public void login() throws IOException {
+    public void login() throws Exception {
         Main.sceneChange("sceneHome");
     }
 

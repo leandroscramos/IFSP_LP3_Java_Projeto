@@ -1,5 +1,7 @@
 package model;
 
+import javafx.beans.property.SimpleDoubleProperty;
+
 public class ProdutoModel {
 
     private Integer codProd;
@@ -34,9 +36,7 @@ public class ProdutoModel {
         this.nomeProd = nomeProd;
     }
 
-    public Double getvUnitProd() {
-        return vUnitProd;
-    }
+    public Double getvUnitProd() { return vUnitProd; }
 
     public void setvUnitProd(Double vUnitProd) {
         this.vUnitProd = vUnitProd;

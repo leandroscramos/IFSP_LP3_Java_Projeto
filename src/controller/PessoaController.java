@@ -33,7 +33,7 @@ public class PessoaController {
         stage.show();
     }
 
-    public void voltar() throws IOException {
+    public void voltar() throws Exception {
         Main.sceneChange("sceneHome");
     }
 

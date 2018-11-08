@@ -50,7 +50,7 @@ public class ProdutoCadController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle("Mensagem de confirmação: ");
-        alert.setContentText("Aluno foi inserido com sucesso!!!");
+        alert.setContentText("Produto foi inserido com sucesso!!!");
         alert.showAndWait();
 
         Stage stageAtual = (Stage) btnCancelar.getScene().getWindow();

@@ -11,7 +11,7 @@ public class AgendaController {
     @FXML
     private JFXButton btnCancelar;
 
-    public void cancelar() throws IOException {
+    public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");
 
     }

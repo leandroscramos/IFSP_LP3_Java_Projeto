@@ -17,6 +17,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.ProdutoModel;
@@ -78,7 +79,10 @@ public class ProdutoController implements Initializable {
         stage.setScene(sceneNewProduto);
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(btnNovo.getScene().getWindow());
-        stage.show();
+        stage.showAndWait();
+        tableProduto.getItems().clear();
+        pmArray = pd.readAllProdutos();
+        preencherTabela(pmArray);
     }
 
     public void deletarProduto(){
@@ -95,15 +99,15 @@ public class ProdutoController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             pd.deleteProduto(pm);
-            tableProduto.getItems().clear();//Limpa os dados da tabela
+            tableProduto.getItems().clear();
             pmArray = pd.readAllProdutos();
-            preencherTabela(pmArray);//Preenche tabela com dados do banco
+            preencherTabela(pmArray);
         } else {
             alert.close();
         }
     }
 
-    public void cancelar() throws IOException {
+    public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");
     }
 
@@ -116,5 +120,6 @@ public class ProdutoController implements Initializable {
         colunaValorProd.setCellValueFactory(new PropertyValueFactory<>("vUnitProd"));
         colunaDescProd.setCellValueFactory(new PropertyValueFactory<>("descProd"));
         tableProduto.setItems(listaProduto);
+
     }
 }

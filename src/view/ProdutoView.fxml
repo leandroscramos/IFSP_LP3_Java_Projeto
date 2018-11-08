@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProdutoController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProdutoController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="600.0" minWidth="1000.0" style="-fx-background-color: #ECF0F5;" VBox.vgrow="ALWAYS">
          <children>
@@ -34,11 +34,11 @@
                   <Font size="14.0" />
                </font></JFXTextField>
             <JFXButton fx:id="btnCancelar" layoutX="890.0" layoutY="552.0" onAction="#cancelar" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #FC7404;" text="Voltar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-            <TableView fx:id="tableProduto" layoutX="63.0" layoutY="115.0" prefHeight="425.0" prefWidth="927.0">
+            <TableView fx:id="tableProduto" editable="true" layoutX="63.0" layoutY="115.0" prefHeight="425.0" prefWidth="927.0">
               <columns>
                 <TableColumn fx:id="colunaCodProd" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="colunaNomeProd" prefWidth="346.0" text="Produto/Serviço" />
-                  <TableColumn fx:id="colunaValorProd" minWidth="0.0" prefWidth="129.0" text="Valor Unitário" />
+                  <TableColumn fx:id="colunaValorProd" minWidth="0.0" prefWidth="129.0" text="Valor/Unitário" />
                   <TableColumn fx:id="colunaDescProd" prefWidth="376.0" text="Descrição" />
               </columns>
             </TableView>

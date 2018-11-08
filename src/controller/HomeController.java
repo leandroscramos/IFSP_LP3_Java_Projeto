@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import java.awt.*;
 import java.io.IOException;
 
+import static application.Main.sceneChange;
+
 public class HomeController {
 
     @FXML
@@ -32,20 +34,20 @@ public class HomeController {
     @FXML
     private JFXButton btnSair;
 
-    public void showAgenda() throws IOException {
-        Main.sceneChange("sceneAgenda");
+    public void showAgenda() throws Exception {
+        sceneChange("sceneAgenda");
     }
 
-    public void showPessoas() throws IOException {
-        Main.sceneChange("scenePessoas");
+    public void showPessoas() throws Exception {
+        sceneChange("scenePessoas");
     }
 
-    public void showProdutos() throws IOException {
-        Main.sceneChange("sceneProdutos");
+    public void showProdutos() throws Exception {
+        sceneChange("sceneProdutos");
     }
 
-    public void showVendas() throws IOException {
-        Main.sceneChange("sceneVendas");
+    public void showVendas() throws Exception {
+        sceneChange("sceneVendas");
     }
 
     public void sair() {

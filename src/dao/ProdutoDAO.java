@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
-
     public void createProduto(ProdutoModel pm){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -62,7 +61,7 @@ public class ProdutoDAO {
         ProdutoModel pmObjeto;
 
         try{
-            stmt = con.prepareStatement("select codigo, nome, valor, descricao from produto");
+            stmt = con.prepareStatement("select * from produto");
             rs = stmt.executeQuery();
 
             while(rs.next()){
