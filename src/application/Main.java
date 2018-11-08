@@ -18,13 +18,17 @@ public class Main extends Application {
     private static Scene sceneVendas;
     //private static Scene sceneRelatorios;
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         palco = primaryStage;
 
         Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
         sceneLogin = new Scene(fxmlLogin);
+
+        palco.setTitle("SisGS - Sistema de Gerenciamento de Salões de Beleza");
+        palco.setScene(sceneLogin);
+        palco.show();
+
         Parent fxmlHome = FXMLLoader.load(getClass().getResource("../view/HomeView.fxml"));
         sceneHome = new Scene(fxmlHome);
         Parent fxmlAgenda = FXMLLoader.load(getClass().getResource("../view/AgendaView.fxml"));
@@ -35,10 +39,6 @@ public class Main extends Application {
         sceneProdutos = new Scene(fxmlProdutos);
         Parent fxmlVendas = FXMLLoader.load(getClass().getResource("../view/VendasView.fxml"));
         sceneVendas = new Scene(fxmlVendas);
-
-        palco.setTitle("SisGS - Sistema de Gerenciamento de Salões de Beleza");
-        palco.setScene(sceneLogin);
-        palco.show();
 
     }
 

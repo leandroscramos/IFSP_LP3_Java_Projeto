@@ -28,7 +28,7 @@
             </Label>
             <JFXButton fx:id="btnNovo" layoutX="536.0" layoutY="552.0" onAction="#newProduto" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Novo" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="340.0" />
             <JFXButton fx:id="btnEditar" layoutX="646.0" layoutY="552.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="230.0" />
-            <JFXButton fx:id="btnRemover" layoutX="756.0" layoutY="552.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
+            <JFXButton fx:id="btnRemover" layoutX="756.0" layoutY="552.0" onAction="#deletarProduto" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
             <JFXTextField layoutX="762.0" layoutY="68.0" prefHeight="40.0" prefWidth="318.0" promptText="Filtrar" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
                <font>
                   <Font size="14.0" />
