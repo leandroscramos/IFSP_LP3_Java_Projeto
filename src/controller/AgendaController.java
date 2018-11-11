@@ -146,5 +146,6 @@ public class AgendaController implements Initializable{
         for (PessoaModel psm: psmArray){
             cbCliente.getItems().add(psm.getNome());
         }
+        cbServico.getSelectionModel().isEmpty();
     }
 }
