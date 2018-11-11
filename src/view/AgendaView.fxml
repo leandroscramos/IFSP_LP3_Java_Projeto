@@ -57,7 +57,7 @@
                </font>
             </Label>
             <ComboBox fx:id="cbServico" layoutX="628.0" layoutY="223.0" prefHeight="40.0" prefWidth="345.0" />
-            <JFXButton fx:id="btnNovoServico" layoutX="627.0" layoutY="271.0" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #240CC4;" text="Novo Serviço" textFill="WHITE" />
+            <JFXButton fx:id="btnNovoServico" layoutX="627.0" layoutY="271.0" onAction="#novoServico" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #240CC4;" text="Novo Serviço" textFill="WHITE" />
             <Label layoutX="628.0" layoutY="327.0" text="Cliente">
                <font>
                   <Font size="14.0" />
@@ -65,7 +65,7 @@
             </Label>
             <ComboBox fx:id="cbCliente" layoutX="628.0" layoutY="352.0" prefHeight="40.0" prefWidth="345.0" />
             <JFXButton fx:id="btnNovoCliente" layoutX="628.0" layoutY="404.0" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #1A73AF;" text="Novo Cliente" textFill="WHITE" />
-            <JFXButton fx:id="btnConfirma" layoutX="627.0" layoutY="483.0" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #00A65A;" text="Confirmar Agendamento" textFill="WHITE" />
+            <JFXButton fx:id="btnConfirma" layoutX="627.0" layoutY="483.0" onAction="#cadastrarAgendamento" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #00A65A;" text="Confirmar Agendamento" textFill="WHITE" />
             <JFXButton fx:id="btnCancelar" layoutX="628.0" layoutY="540.0" onAction="#cancelar" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
          </children>
     </AnchorPane>
