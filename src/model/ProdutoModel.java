@@ -1,11 +1,13 @@
 package model;
 
-import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.DoubleProperty;
 
 public class ProdutoModel {
 
     private Integer codProd;
     private String nomeProd;
+    private String categoria;
+    private Integer estoque;
     private Double vUnitProd;
     private String descProd;
 
@@ -13,10 +15,12 @@ public class ProdutoModel {
 
     }
 
-    public ProdutoModel(Integer codProd, String nomeProd, Double vUnitProd, String descProd) {
+    public ProdutoModel(Integer codProd, String nomeProd, String categoria, Double vUnitProd, Integer estoque, String descProd) {
         this.codProd = codProd;
         this.nomeProd = nomeProd;
+        this.categoria = categoria;
         this.vUnitProd = vUnitProd;
+        this.estoque = estoque;
         this.descProd = descProd;
     }
 
@@ -48,5 +52,21 @@ public class ProdutoModel {
 
     public void setDescProd(String descProd) {
         this.descProd = descProd;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Integer getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Integer estoque) {
+        this.estoque = estoque;
     }
 }

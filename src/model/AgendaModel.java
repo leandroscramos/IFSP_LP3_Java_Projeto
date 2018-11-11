@@ -5,61 +5,61 @@ import java.util.Date;
 
 public class AgendaModel {
 
-    private Integer codAg;
-    private Date dataNewAg;
-    private Time horaNewAg;
-    private String servico;
-    private String cliente;
+    private Integer id;
+    private String data;
+    private String hora;
+    private ProdutoModel pm;
+    private PessoaModel psm;
 
     public AgendaModel(){
 
     }
 
-    public AgendaModel(Integer codAg, Date dataNewAg, Time horaNewAg, String servico, String cliente) {
-        this.codAg = codAg;
-        this.dataNewAg = dataNewAg;
-        this.horaNewAg = horaNewAg;
-        this.servico = servico;
-        this.cliente = cliente;
+    public AgendaModel(Integer id, String data, String hora, ProdutoModel pm, PessoaModel psm) {
+        this.id = id;
+        this.data = data;
+        this.hora = hora;
+        this.pm = pm;
+        this.psm = psm;
     }
 
-    public Integer getCodAg() {
-        return codAg;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodAg(Integer codAg) {
-        this.codAg = codAg;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Date getDataNewAg() {
-        return dataNewAg;
+    public String getData() {
+        return data;
     }
 
-    public void setDataNewAg(Date dataNewAg) {
-        this.dataNewAg = dataNewAg;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public Time getHoraNewAg() {
-        return horaNewAg;
+    public String getHora() {
+        return hora;
     }
 
-    public void setHoraNewAg(Time horaNewAg) {
-        this.horaNewAg = horaNewAg;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
-    public String getServico() {
-        return servico;
+    public ProdutoModel getPm() {
+        return pm;
     }
 
-    public void setServico(String servico) {
-        this.servico = servico;
+    public void setPm(ProdutoModel pm) {
+        this.pm = pm;
     }
 
-    public String getCliente() {
-        return cliente;
+    public PessoaModel getPsm() {
+        return psm;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setPsm(PessoaModel psm) {
+        this.psm = psm;
     }
 }

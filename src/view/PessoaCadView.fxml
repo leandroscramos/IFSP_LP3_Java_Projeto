@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -11,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PessoaCadController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PessoaCadController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="360.0" minWidth="600.0" style="-fx-background-color: #ECF0F5;" VBox.vgrow="ALWAYS">
          <children>
@@ -22,7 +21,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="19.0" text="Cadastro de Clientes e Funcionários">
+            <Label layoutX="63.0" layoutY="19.0" text="Cadastro de Clientes">
                <font>
                   <Font size="18.0" />
                </font>
@@ -63,7 +62,7 @@
                </font>
             </Label>
             <DatePicker fx:id="txtDataNasc" layoutX="179.0" layoutY="187.0" prefHeight="40.0" prefWidth="169.0" />
-            <JFXCheckBox fx:id="cbFuncionario" layoutX="445.0" layoutY="197.0" text="Funcionário?">
+            <JFXCheckBox fx:id="cbFuncionario" disable="true" layoutX="445.0" layoutY="197.0" text="Funcionário?" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
@@ -88,8 +87,8 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="btnCancelar" layoutX="780.0" layoutY="550.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
-            <JFXButton fx:id="btnInserir" layoutX="890.0" layoutY="550.0" onAction="#inserirPessoa" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Inserir" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <JFXButton fx:id="btnCancelar" layoutX="780.0" layoutY="550.0" onAction="#cancelar" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
+            <JFXButton fx:id="btnInserir" layoutX="890.0" layoutY="550.0" onAction="#cadastrarPessoa" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Ok" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
          </children>
     </AnchorPane>
   </children>

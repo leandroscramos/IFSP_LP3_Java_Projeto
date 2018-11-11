@@ -3,6 +3,7 @@ package controller;
 import application.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,10 +23,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.ProdutoModel;
 import dao.ProdutoDAO;
+import controller.ProdutoCadController;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -50,6 +55,12 @@ public class ProdutoController implements Initializable {
     private TableColumn<ProdutoModel, String> colunaDescProd;
 
     @FXML
+    private TableColumn<ProdutoModel, String> colunaCategoria;
+
+    @FXML
+    private TableColumn<ProdutoModel, Integer> colunaEstoque;
+
+    @FXML
     private JFXButton btnNovo;
 
     @FXML
@@ -65,6 +76,7 @@ public class ProdutoController implements Initializable {
     ProdutoModel pm = new ProdutoModel();
     ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
     ObservableList<ProdutoModel> listaProduto = FXCollections.observableArrayList();
+    String flag;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -73,19 +85,63 @@ public class ProdutoController implements Initializable {
     }
 
     public void newProduto() throws IOException {
+
+        flag = "insert";
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ProdutoCadController.class.getResource("../view/ProdutoCadView.fxml"));
+        Parent parent = (Parent) loader.load();
+        Scene sceneNewProduto = new Scene(parent);
         Stage stage = new Stage();
-        Parent fxmlNewProduto = FXMLLoader.load(getClass().getResource("../view/ProdutoCadView.fxml"));
-        Scene sceneNewProduto = new Scene(fxmlNewProduto);
         stage.setScene(sceneNewProduto);
+        ProdutoCadController pdc = loader.getController();
+
+        pdc.setFlag(flag);
+
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(btnNovo.getScene().getWindow());
         stage.showAndWait();
+
         tableProduto.getItems().clear();
         pmArray = pd.readAllProdutos();
         preencherTabela(pmArray);
+
+    }
+
+    public void updateProduto() throws IOException {
+
+        flag = "update";
+
+        pm.setCodProd(tableProduto.getSelectionModel().getSelectedItem().getCodProd());
+        pm.setNomeProd(tableProduto.getSelectionModel().getSelectedItem().getNomeProd());
+        pm.setCategoria(tableProduto.getSelectionModel().getSelectedItem().getCategoria());
+        pm.setvUnitProd(tableProduto.getSelectionModel().getSelectedItem().getvUnitProd());
+        pm.setEstoque(tableProduto.getSelectionModel().getSelectedItem().getEstoque());
+        pm.setDescProd(tableProduto.getSelectionModel().getSelectedItem().getDescProd());
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ProdutoCadController.class.getResource("../view/ProdutoCadView.fxml"));
+        Parent parent = (Parent) loader.load();
+        Scene sceneNewProduto = new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(sceneNewProduto);
+        ProdutoCadController pdc = loader.getController();
+
+        pdc.exibirDados(pm);
+        pdc.setFlag(flag);
+
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(btnEditar.getScene().getWindow());
+        stage.showAndWait();
+
+        tableProduto.getItems().clear();
+        pmArray = pd.readAllProdutos();
+        preencherTabela(pmArray);
+
     }
 
     public void deletarProduto(){
+
         pm.setCodProd(tableProduto.getSelectionModel().getSelectedItem().getCodProd());
         pm.setNomeProd(tableProduto.getSelectionModel().getSelectedItem().getNomeProd());
         pm.setvUnitProd(tableProduto.getSelectionModel().getSelectedItem().getvUnitProd());
@@ -112,13 +168,16 @@ public class ProdutoController implements Initializable {
     }
 
     public void preencherTabela(ArrayList<ProdutoModel> pmArray) {
+
         pmArray.forEach((pm) -> {
-            listaProduto.add(new ProdutoModel(pm.getCodProd(), pm.getNomeProd(), pm.getvUnitProd(), pm.getDescProd()));
+            listaProduto.add(new ProdutoModel(pm.getCodProd(), pm.getNomeProd(), pm.getCategoria(), pm.getvUnitProd(), pm.getEstoque(), pm.getDescProd()));
         });
-        colunaCodProd.setCellValueFactory(new PropertyValueFactory<>("codProd"));
-        colunaNomeProd.setCellValueFactory(new PropertyValueFactory<>("nomeProd"));
-        colunaValorProd.setCellValueFactory(new PropertyValueFactory<>("vUnitProd"));
-        colunaDescProd.setCellValueFactory(new PropertyValueFactory<>("descProd"));
+        colunaCodProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, Integer>("codProd"));
+        colunaNomeProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("nomeProd"));
+        colunaCategoria.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("categoria"));
+        colunaValorProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, Double>("vUnitProd"));
+        colunaEstoque.setCellValueFactory(new PropertyValueFactory<ProdutoModel, Integer>("estoque"));
+        colunaDescProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("descProd"));
         tableProduto.setItems(listaProduto);
 
     }

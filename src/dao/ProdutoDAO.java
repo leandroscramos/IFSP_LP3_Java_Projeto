@@ -17,18 +17,39 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+
     public void createProduto(ProdutoModel pm){
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("insert into produto (nome, valor, descricao) values (?, ?, ?)");
-            stmt.setString(1, pm.getNomeProd());
-            stmt.setDouble(2, pm.getvUnitProd());
-            stmt.setString(3, pm.getDescProd());
+            stmt = con.prepareStatement("insert into produto (nome, categoria, valor, estoque, descricao) values (?, ?, ?, ?, ?)");
+            stmt.setString(1, pm.getNomeProd().toUpperCase());
+            stmt.setString(2, pm.getCategoria().toUpperCase());
+            stmt.setDouble(3, pm.getvUnitProd());
+            stmt.setInt(4, pm.getEstoque());
+            stmt.setString(5, pm.getDescProd().toUpperCase());
             stmt.executeUpdate();
 
-            //JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
+
+    public void updateProduto(ProdutoModel pm){
+
+        try {
+            stmt = con.prepareStatement("update produto set nome=?, categoria=?, valor=?, estoque=?, descricao=? where codigo=?");
+            stmt.setString(1, pm.getNomeProd().toUpperCase());
+            stmt.setString(2, pm.getCategoria().toUpperCase());
+            stmt.setDouble(3, pm.getvUnitProd());
+            stmt.setInt(4, pm.getEstoque());
+            stmt.setString(5, pm.getDescProd().toUpperCase());
+            stmt.setInt(6,pm.getCodProd());
+            stmt.executeUpdate();
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
         } finally {
@@ -68,7 +89,9 @@ public class ProdutoDAO {
                 pmObjeto = new ProdutoModel();
                 pmObjeto.setCodProd(rs.getInt("codigo"));
                 pmObjeto.setNomeProd(rs.getString("nome"));
+                pmObjeto.setCategoria(rs.getString("categoria"));
                 pmObjeto.setvUnitProd(rs.getDouble("valor"));
+                pmObjeto.setEstoque(rs.getInt("estoque"));
                 pmObjeto.setDescProd(rs.getString("descricao"));
                 pmArray.add(pmObjeto);
             }

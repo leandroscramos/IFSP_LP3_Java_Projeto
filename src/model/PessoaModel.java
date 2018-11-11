@@ -1,14 +1,12 @@
 package model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class PessoaModel {
     private String cpf;
     private String nome;
     private String sexo;
-    private Date data_nasc;
-    private String isFuncionario;
+    private String data_nasc;
     private String email;
     private String celular;
 
@@ -16,12 +14,11 @@ public class PessoaModel {
 
     }
 
-    public PessoaModel(String cpf, String nome, String sexo, Date data_nasc, String isFuncionario, String email, String celular) {
+    public PessoaModel(String cpf, String nome, String sexo, String data_nasc, String email, String celular) {
         this.cpf = cpf;
         this.nome = nome;
         this.sexo = sexo;
         this.data_nasc = data_nasc;
-        this.isFuncionario = isFuncionario;
         this.email = email;
         this.celular = celular;
     }
@@ -50,18 +47,10 @@ public class PessoaModel {
         this.sexo = sexo;
     }
 
-    public Date getData_nasc() { return data_nasc; }
+    public String getData_nasc() { return data_nasc; }
 
-    public void setData_nasc(Date data_nasc) {
+    public void setData_nasc(String data_nasc) {
         this.data_nasc = data_nasc;
-    }
-
-    public String getFuncionario() {
-        return isFuncionario;
-    }
-
-    public void setFuncionario(String funcionario) {
-        isFuncionario = funcionario;
     }
 
     public String getEmail() {
@@ -79,4 +68,5 @@ public class PessoaModel {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
 }
