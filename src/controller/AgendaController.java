@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTimePicker;
 import dao.AgendaDAO;
 import dao.PessoaDAO;
 import dao.ProdutoDAO;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.PessoaModel;
@@ -72,9 +74,15 @@ public class AgendaController implements Initializable{
     PessoaDAO psd = new PessoaDAO();
     ArrayList<ProdutoModel> pmArray = new ArrayList<>();
     ArrayList<PessoaModel> psmArray = new ArrayList<>();
+    ArrayList<AgendaModel> amArray =  new ArrayList<>();
+    ObservableList<AgendaModel> listaAgenda = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        amArray = ad.selectAllAgendas();
+        System.out.println(amArray);
+        preencherTabela(amArray);
         preencheCombo();
     }
 
@@ -136,8 +144,6 @@ public class AgendaController implements Initializable{
     }
 
     public void preencheCombo(){
-        cbServico.getSelectionModel().clearSelection();
-        cbCliente.getSelectionModel().clearSelection();
         pmArray = pd.readAllProdutos();
         for (ProdutoModel pm: pmArray){
             cbServico.getItems().add(pm.getNomeProd());
@@ -146,6 +152,19 @@ public class AgendaController implements Initializable{
         for (PessoaModel psm: psmArray){
             cbCliente.getItems().add(psm.getNome());
         }
-        cbServico.getSelectionModel().isEmpty();
+    }
+
+    public void preencherTabela(ArrayList<AgendaModel> pmArray) {
+
+        amArray.forEach((am) -> {
+            listaAgenda.add(new AgendaModel(am.getId(), am.getData(), am.getHora(), am.getPm(), am.getPsm()));
+        });
+
+        colunaDia.setCellValueFactory(new PropertyValueFactory<AgendaModel, Date>("data"));
+        colunaHora.setCellValueFactory(new PropertyValueFactory<AgendaModel, Time>("hora"));
+        colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
+        colunaCliente.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPsm().getNome()));
+        tableAgenda.setItems(listaAgenda);
+
     }
 }

@@ -2,11 +2,15 @@ package dao;
 
 import connection.ConnectionFactory;
 import model.AgendaModel;
+import model.PessoaModel;
+import model.ProdutoModel;
 
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class AgendaDAO {
 
@@ -27,6 +31,45 @@ public class AgendaDAO {
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
+    }
+
+    public ArrayList<AgendaModel> selectAllAgendas(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        ArrayList<AgendaModel> amArray = new ArrayList<>();
+        AgendaModel amObjeto;
+        ProdutoModel pm;
+        PessoaModel psm;
+
+        try{
+            stmt = con.prepareStatement("select * from agenda");
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                amObjeto = new AgendaModel();
+                pm = new ProdutoModel();
+                psm = new PessoaModel();
+                amObjeto.setData("data");
+                amObjeto.setHora("hora");
+
+                pm.setNomeProd(rs.getString("produto"));
+                amObjeto.setPm(pm);
+
+                psm.setNome(rs.getString("cliente"));
+                amObjeto.setPsm(psm);
+
+                amArray.add(amObjeto);
+            }
+
+        }catch(SQLException ex){
+            System.out.println("Erro ao buscar a agenda: "+ex.getMessage());
+            return null;
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return amArray;
     }
 
 }
