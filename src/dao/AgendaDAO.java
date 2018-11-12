@@ -59,7 +59,10 @@ public class AgendaDAO {
         PessoaModel psm;
 
         try{
-            stmt = con.prepareStatement("select id, data, hora, servico, cliente from agenda");
+            stmt = con.prepareStatement("" +
+                    "select id.A, data.A, hora.A, servico.P, cliente.C from agenda A" +
+                    "join produto P" +
+                    "on A.");
             rs = stmt.executeQuery();
 
             while(rs.next()){
