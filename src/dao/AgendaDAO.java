@@ -33,6 +33,21 @@ public class AgendaDAO {
         }
     }
 
+    public void deleteAgenda (AgendaModel am){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+
+        try{
+            stmt = con.prepareStatement("delete from agenda where id=?");
+            stmt.setInt(1, am.getId());
+            stmt.execute();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
+        }finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
+
     public ArrayList<AgendaModel> selectAllAgendas(){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -44,17 +59,18 @@ public class AgendaDAO {
         PessoaModel psm;
 
         try{
-            stmt = con.prepareStatement("select * from agenda");
+            stmt = con.prepareStatement("select id, data, hora, servico, cliente from agenda");
             rs = stmt.executeQuery();
 
             while(rs.next()){
                 amObjeto = new AgendaModel();
                 pm = new ProdutoModel();
                 psm = new PessoaModel();
-                amObjeto.setData("data");
-                amObjeto.setHora("hora");
+                amObjeto.setId(rs.getInt("id"));
+                amObjeto.setData(rs.getString("data"));
+                amObjeto.setHora(rs.getString("hora"));
 
-                pm.setNomeProd(rs.getString("produto"));
+                pm.setNomeProd(rs.getString("servico"));
                 amObjeto.setPm(pm);
 
                 psm.setNome(rs.getString("cliente"));

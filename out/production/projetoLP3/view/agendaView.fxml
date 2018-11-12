@@ -36,14 +36,15 @@
             <JFXDatePicker fx:id="dataPesquisa" layoutX="220.0" layoutY="82.0" prefHeight="25.0" prefWidth="140.0" />
             <TableView fx:id="tableAgenda" layoutX="63.0" layoutY="127.0" prefHeight="397.0" prefWidth="530.0">
               <columns>
-                <TableColumn fx:id="colunaDia" prefWidth="64.0" resizable="false" style="-fx-alignment: CENTER;" text="Dia" />
-                <TableColumn fx:id="colunaHora" prefWidth="76.0" resizable="false" style="-fx-alignment: CENTER;" text="Hora" />
-                  <TableColumn fx:id="colunaCliente" prefWidth="215.0" resizable="false" text="Cliente" />
-                  <TableColumn fx:id="colunaServico" prefWidth="174.0" resizable="false" text="Serviço" />
+                  <TableColumn fx:id="colunaId" prefWidth="38.0" resizable="false" style="-fx-alignment: CENTER;" text="Id" />
+                <TableColumn fx:id="colunaDia" prefWidth="90.0" resizable="false" style="-fx-alignment: CENTER;" text="Dia" />
+                <TableColumn fx:id="colunaHora" resizable="false" style="-fx-alignment: CENTER;" text="Hora" />
+                  <TableColumn fx:id="colunaCliente" prefWidth="172.0" resizable="false" text="Cliente" />
+                  <TableColumn fx:id="colunaServico" prefWidth="149.0" resizable="false" text="Serviço" />
               </columns>
             </TableView>
             <JFXButton fx:id="btnEditar" layoutX="383.0" layoutY="540.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
-            <JFXButton fx:id="btnRemover" layoutX="494.0" layoutY="540.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
+            <JFXButton fx:id="btnRemover" layoutX="494.0" layoutY="540.0" onAction="#excluirAgendamento" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
             <Label layoutX="628.0" layoutY="97.0" text="Incluir agendamento">
                <font>
                   <Font size="14.0" />
@@ -64,7 +65,7 @@
                </font>
             </Label>
             <ComboBox fx:id="cbCliente" layoutX="628.0" layoutY="352.0" prefHeight="40.0" prefWidth="345.0" />
-            <JFXButton fx:id="btnNovoCliente" layoutX="628.0" layoutY="404.0" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #1A73AF;" text="Novo Cliente" textFill="WHITE" />
+            <JFXButton fx:id="btnNovoCliente" layoutX="628.0" layoutY="404.0" onAction="#novoCliente" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #1A73AF;" text="Novo Cliente" textFill="WHITE" />
             <JFXButton fx:id="btnConfirma" layoutX="627.0" layoutY="483.0" onAction="#cadastrarAgendamento" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #00A65A;" text="Confirmar Agendamento" textFill="WHITE" />
             <JFXButton fx:id="btnCancelar" layoutX="628.0" layoutY="540.0" onAction="#cancelar" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
          </children>

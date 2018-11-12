@@ -16,10 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -35,6 +32,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AgendaController implements Initializable{
@@ -52,7 +50,10 @@ public class AgendaController implements Initializable{
     private JFXButton btnNovoServico, btnNovoCliente, btnConfirma, btnCancelar, btnEditar, btnRemover;
 
     @FXML
-    private TableView tableAgenda;
+    private TableView<AgendaModel> tableAgenda;
+
+    @FXML
+    private TableColumn<AgendaModel, Integer> colunaId;
 
     @FXML
     private TableColumn<AgendaModel, Date> colunaDia;
@@ -61,10 +62,10 @@ public class AgendaController implements Initializable{
     private TableColumn<AgendaModel, Time> colunaHora;
 
     @FXML
-    private TableColumn<AgendaModel, PessoaModel> colunaCliente;
+    private TableColumn<AgendaModel, String> colunaCliente;
 
     @FXML
-    private TableColumn<AgendaModel, ProdutoModel> colunaServico;
+    private TableColumn<AgendaModel, String> colunaServico;
 
     AgendaModel am = new AgendaModel();
     AgendaDAO ad = new AgendaDAO();
@@ -81,7 +82,6 @@ public class AgendaController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
 
         amArray = ad.selectAllAgendas();
-        System.out.println(amArray);
         preencherTabela(amArray);
         preencheCombo();
     }
@@ -112,6 +112,34 @@ public class AgendaController implements Initializable{
         alert.setTitle("Mensagem de confirmação: ");
         alert.setContentText("Agendamento realizado com sucesso!!!");
         alert.showAndWait();
+
+        tableAgenda.getItems().clear();
+        amArray = ad.selectAllAgendas();
+        preencherTabela(amArray);
+    }
+
+    public void excluirAgendamento(){
+
+        am.setId(tableAgenda.getSelectionModel().getSelectedItem().getId());
+        am.setData(tableAgenda.getSelectionModel().getSelectedItem().getData());
+        am.setHora(tableAgenda.getSelectionModel().getSelectedItem().getHora());
+        am.setPm(tableAgenda.getSelectionModel().getSelectedItem().getPm());
+        am.setPsm(tableAgenda.getSelectionModel().getSelectedItem().getPsm());
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmar exclusão");
+        alert.setHeaderText(null);
+        alert.setContentText("Você realmente deseja excluir o agendamento selecionado? Essa ação não poderá ser desfeita!");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            ad.deleteAgenda(am);
+            tableAgenda.getItems().clear();
+            amArray = ad.selectAllAgendas();
+            preencherTabela(amArray);
+        } else {
+            alert.close();
+        }
     }
 
     public void cancelar() throws Exception {
@@ -136,6 +164,23 @@ public class AgendaController implements Initializable{
 
     }
 
+    public void novoCliente() throws Exception {
+        String flag = "insert";
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ProdutoCadController.class.getResource("../view/PessoaCadView.fxml"));
+        Parent parent = (Parent) loader.load();
+        Scene sceneNewPessoa = new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(sceneNewPessoa);
+        PessoaCadController pscc = loader.getController();
+        pscc.setFlag(flag);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(btnNovoCliente.getScene().getWindow());
+        stage.showAndWait();
+        preencheCombo();
+
+    }
+
     public void limparCampos(){
         txtData.setValue(LocalDate.now());
         txtHora.setValue(LocalTime.now());
@@ -144,10 +189,12 @@ public class AgendaController implements Initializable{
     }
 
     public void preencheCombo(){
+        cbServico.getItems().clear();
         pmArray = pd.readAllProdutos();
         for (ProdutoModel pm: pmArray){
             cbServico.getItems().add(pm.getNomeProd());
         }
+        cbCliente.getItems().clear();
         psmArray = psd.readAllPessoa();
         for (PessoaModel psm: psmArray){
             cbCliente.getItems().add(psm.getNome());
@@ -160,6 +207,7 @@ public class AgendaController implements Initializable{
             listaAgenda.add(new AgendaModel(am.getId(), am.getData(), am.getHora(), am.getPm(), am.getPsm()));
         });
 
+        colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
         colunaDia.setCellValueFactory(new PropertyValueFactory<AgendaModel, Date>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<AgendaModel, Time>("hora"));
         colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
