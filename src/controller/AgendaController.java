@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTimePicker;
 import dao.AgendaDAO;
 import dao.PessoaDAO;
 import dao.ProdutoDAO;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -144,7 +145,6 @@ public class AgendaController implements Initializable{
 
     public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");
-
     }
 
     public void novoServico() throws Exception {

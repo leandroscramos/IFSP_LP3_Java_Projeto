@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VendasController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="600.0" minWidth="1000.0" style="-fx-background-color: #ECF0F5;" VBox.vgrow="ALWAYS">
          <children>
@@ -26,8 +26,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXTreeTableView layoutX="63.0" layoutY="261.0" prefHeight="219.0" prefWidth="926.0" />
-            <JFXButton layoutX="890.0" layoutY="547.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
+            <JFXTreeTableView layoutX="63.0" layoutY="242.0" prefHeight="219.0" prefWidth="710.0" />
+            <JFXButton layoutX="781.0" layoutY="492.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
             <TextField layoutX="63.0" layoutY="154.0" prefHeight="40.0" prefWidth="92.0">
                <font>
                   <Font size="14.0" />
@@ -78,32 +78,33 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="890.0" layoutY="198.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Incluir" textFill="WHITE" />
-            <Label layoutX="63.0" layoutY="238.0" text="Lista de Produtos">
+            <JFXButton layoutX="781.0" layoutY="242.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
+            <Label layoutX="63.0" layoutY="219.0" text="Lista de Produtos">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="890.0" layoutY="489.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" />
-            <TextField layoutX="654.0" layoutY="547.0" prefHeight="40.0" prefWidth="221.0" />
-            <Label layoutX="654.0" layoutY="523.0" text="SubTotal">
+            <JFXButton layoutX="781.0" layoutY="293.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
+            <TextField layoutX="780.0" layoutY="393.0" prefHeight="68.0" prefWidth="210.0" />
+            <Label layoutX="780.0" layoutY="369.0" text="SubTotal">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="423.0" layoutY="523.0" text="Forma de Pagamento">
+            <Label layoutX="551.0" layoutY="468.0" text="Forma de Pagamento">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="424.0" layoutY="547.0" prefHeight="40.0" prefWidth="221.0" />
-            <TextField layoutX="63.0" layoutY="547.0" prefHeight="40.0" prefWidth="351.0" />
-            <Label layoutX="63.0" layoutY="523.0" text="Observações">
+            <ComboBox layoutX="552.0" layoutY="492.0" prefHeight="40.0" prefWidth="221.0" />
+            <TextField layoutX="63.0" layoutY="492.0" prefHeight="40.0" prefWidth="480.0" />
+            <Label layoutX="63.0" layoutY="468.0" text="Observações">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <Label layoutX="729.0" layoutY="24.0" />
+            <JFXButton fx:id="btnCancelar" layoutX="781.0" layoutY="544.0" onAction="#cancelar" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" />
          </children>
     </AnchorPane>
   </children>

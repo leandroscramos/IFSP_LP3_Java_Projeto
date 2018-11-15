@@ -52,7 +52,7 @@
             </VBox>
             <Pane layoutX="150.0" layoutY="511.0" prefHeight="52.0" prefWidth="850.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="439.0" layoutY="11.0" prefHeight="31.0" prefWidth="397.0" text="Segunda-feira, 22 de outubro de 2018 - 16:30:50">
+                  <Label layoutX="510.0" layoutY="11.0" prefHeight="31.0" prefWidth="326.0" text="Segunda-feira, 12 de novembro de 2018">
                      <font>
                         <Font size="18.0" />
                      </font>

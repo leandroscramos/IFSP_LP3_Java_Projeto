@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class AgendaDAO {
 
-    Connection con = new ConnectionFactory().getConnection();
-    PreparedStatement stmt = null;
-
     public void createAgenda (AgendaModel am) {
+        Connection con = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = null;
+
         try {
             stmt = con.prepareStatement("insert into agenda (data, hora, servico, cliente) values (?, ?, ?, ?)");
             stmt.setString(1, am.getData());
@@ -59,25 +59,24 @@ public class AgendaDAO {
         PessoaModel psm;
 
         try{
-            stmt = con.prepareStatement("" +
-                    "select id.A, data.A, hora.A, servico.P, cliente.C from agenda A" +
-                    "join produto P" +
-                    "on A.");
+            stmt = con.prepareStatement("select * from agenda");
             rs = stmt.executeQuery();
 
             while(rs.next()){
                 amObjeto = new AgendaModel();
                 pm = new ProdutoModel();
                 psm = new PessoaModel();
+
                 amObjeto.setId(rs.getInt("id"));
                 amObjeto.setData(rs.getString("data"));
                 amObjeto.setHora(rs.getString("hora"));
 
-                pm.setNomeProd(rs.getString("servico"));
-                amObjeto.setPm(pm);
-
-                psm.setNome(rs.getString("cliente"));
+                //psm.setNome(rs.getString("cliente"));
                 amObjeto.setPsm(psm);
+
+
+                //pm.setNomeProd(rs.getString("servico"));
+                amObjeto.setPm(pm);
 
                 amArray.add(amObjeto);
             }

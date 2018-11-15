@@ -40,7 +40,7 @@
                 <TableColumn fx:id="colunaDia" prefWidth="90.0" resizable="false" style="-fx-alignment: CENTER;" text="Dia" />
                 <TableColumn fx:id="colunaHora" resizable="false" style="-fx-alignment: CENTER;" text="Hora" />
                   <TableColumn fx:id="colunaCliente" prefWidth="172.0" resizable="false" text="Cliente" />
-                  <TableColumn fx:id="colunaServico" prefWidth="149.0" resizable="false" text="Serviço" />
+                  <TableColumn fx:id="colunaServico" prefWidth="149.0" resizable="false" style="-fx-alignment: CENTER;" text="Serviço" />
               </columns>
             </TableView>
             <JFXButton fx:id="btnEditar" layoutX="383.0" layoutY="540.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" />
