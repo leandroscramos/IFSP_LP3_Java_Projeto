@@ -3,11 +3,10 @@ package controller;
 import application.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,21 +17,19 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.ProdutoModel;
 import dao.ProdutoDAO;
-import controller.ProdutoCadController;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+import static javafx.scene.control.cell.ChoiceBoxTableCell.forTableColumn;
 
 public class ProdutoController implements Initializable {
 
@@ -181,4 +178,6 @@ public class ProdutoController implements Initializable {
         tableProduto.setItems(listaProduto);
 
     }
+
+
 }

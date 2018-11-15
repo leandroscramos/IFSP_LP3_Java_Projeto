@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import model.LoginModel;
 
 import java.io.IOException;
 
@@ -29,7 +30,20 @@ public class LoginController {
     private JFXButton btnCancel;
 
     public void login() throws Exception {
-        Main.sceneChange("sceneHome");
+        LoginModel login = new LoginModel(txtLogin.getText(), txtPassword.getText());
+        try {
+
+            System.out.println(login.getUser()+" "+login.getPassword());
+            if(login.getUser().equals("root") && login.getPassword().equals("root")){
+                Main.sceneChange("sceneHome");
+            }
+        } catch (Exception e){
+            System.out.println("Falha no login");
+        }
+
+
+
+
     }
 
     public void cancel() {
