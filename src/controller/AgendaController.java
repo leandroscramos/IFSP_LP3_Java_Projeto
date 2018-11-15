@@ -143,6 +143,21 @@ public class AgendaController implements Initializable{
         }
     }
 
+    public void editarAgendamento() {
+
+        am.setData(tableAgenda.getSelectionModel().getSelectedItem().getData());
+        am.setHora(tableAgenda.getSelectionModel().getSelectedItem().getHora());
+        am.setPm(tableAgenda.getSelectionModel().getSelectedItem().getPm());
+        am.setPsm(tableAgenda.getSelectionModel().getSelectedItem().getPsm());
+
+        txtData.setValue(LocalDate.parse(String.valueOf(am.getData())));
+        txtHora.setValue(LocalTime.parse(String.valueOf(am.getHora())));
+
+        cbServico.setValue(String.valueOf(am.getPm().getNomeProd()));
+        cbCliente.setValue(String.valueOf(am.getPsm().getNome()));
+
+    }
+
     public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");
     }
@@ -190,7 +205,7 @@ public class AgendaController implements Initializable{
 
     public void preencheCombo(){
         cbServico.getItems().clear();
-        pmArray = pd.readProdutosServico();
+        pmArray = pd.readProdutosCategoria("SERVIÇO");
         for (ProdutoModel pm: pmArray){
             cbServico.getItems().add(pm.getNomeProd());
         }

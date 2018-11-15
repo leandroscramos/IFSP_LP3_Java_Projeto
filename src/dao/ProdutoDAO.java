@@ -106,7 +106,7 @@ public class ProdutoDAO {
         return pmArray;
     }
 
-    public ArrayList<ProdutoModel> readProdutosServico(){
+    public ArrayList<ProdutoModel> readProdutosCategoria(String categoria){
 
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -116,7 +116,8 @@ public class ProdutoDAO {
         ProdutoModel pmObjetoServ;
 
         try{
-            stmt = con.prepareStatement("select * from produto where categoria = 'SERVIÇO'");
+            stmt = con.prepareStatement("select * from produto where categoria=?");
+            stmt.setString(1, categoria);
             rs = stmt.executeQuery();
 
             while(rs.next()){
