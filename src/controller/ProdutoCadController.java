@@ -93,7 +93,7 @@ public class ProdutoCadController implements Initializable{
         }
 
         if(flag.equals("update")) {
-
+            pm.setCodProd(Integer.parseInt(txtCodProd.getText()));
             pm.setNomeProd(txtNomeProd.getText());
             pm.setCategoria(txtCategoria.getSelectionModel().getSelectedItem().toString());
             pm.setvUnitProd(Double.parseDouble(txtValorProd.getText()));

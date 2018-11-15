@@ -19,6 +19,7 @@ public class ProdutoDAO {
 
     Connection con = ConnectionFactory.getConnection();
     PreparedStatement stmt = null;
+    ProdutoModel pm = new ProdutoModel();
 
     public void createProduto(ProdutoModel pm){
 
@@ -47,7 +48,7 @@ public class ProdutoDAO {
             stmt.setDouble(3, pm.getvUnitProd());
             stmt.setInt(4, pm.getEstoque());
             stmt.setString(5, pm.getDescProd().toUpperCase());
-            stmt.setInt(6,pm.getCodProd());
+            stmt.setInt(6, pm.getCodProd());
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
@@ -97,7 +98,40 @@ public class ProdutoDAO {
             }
 
         }catch(SQLException ex){
-            System.out.println("Erro ao buscar todos alunos: "+ex.getMessage());
+            System.out.println("Erro ao buscar todos os produtos: "+ex.getMessage());
+            return null;
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return pmArray;
+    }
+
+    public ArrayList<ProdutoModel> readProdutosServico(){
+
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
+        ProdutoModel pmObjetoServ;
+
+        try{
+            stmt = con.prepareStatement("select * from produto where categoria = 'SERVIÇO'");
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                pmObjetoServ = new ProdutoModel();
+                pmObjetoServ.setCodProd(rs.getInt("codigo"));
+                pmObjetoServ.setNomeProd(rs.getString("nome"));
+                pmObjetoServ.setCategoria(rs.getString("categoria"));
+                pmObjetoServ.setvUnitProd(rs.getDouble("valor"));
+                pmObjetoServ.setEstoque(rs.getInt("estoque"));
+                pmObjetoServ.setDescProd(rs.getString("descricao"));
+                pmArray.add(pmObjetoServ);
+            }
+
+        }catch(SQLException ex){
+            System.out.println("Erro ao buscar todos os produtos: "+ex.getMessage());
             return null;
         } finally {
             ConnectionFactory.closeConnection(con, stmt, rs);

@@ -55,8 +55,13 @@ public class AgendaDAO {
 
         ArrayList<AgendaModel> amArray = new ArrayList<>();
         AgendaModel amObjeto;
-        ProdutoModel pm;
-        PessoaModel psm;
+        ProdutoModel pm = new ProdutoModel();
+        ProdutoDAO pd = new ProdutoDAO();
+        PessoaModel psm = new PessoaModel();
+        PessoaDAO psd = new PessoaDAO();
+
+        ArrayList<ProdutoModel> pmArray = new ArrayList<>();
+        ArrayList<PessoaModel> psmArray = new ArrayList<>();
 
         try{
             stmt = con.prepareStatement("select * from agenda");
@@ -71,11 +76,10 @@ public class AgendaDAO {
                 amObjeto.setData(rs.getString("data"));
                 amObjeto.setHora(rs.getString("hora"));
 
-                //psm.setNome(rs.getString("cliente"));
+                psm.setNome(rs.getString("cliente"));
                 amObjeto.setPsm(psm);
 
-
-                //pm.setNomeProd(rs.getString("servico"));
+                pm.setNomeProd(rs.getString("servico"));
                 amObjeto.setPm(pm);
 
                 amArray.add(amObjeto);
@@ -86,8 +90,9 @@ public class AgendaDAO {
             return null;
         } finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
+            return amArray;
         }
-        return amArray;
+
     }
 
 }

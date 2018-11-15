@@ -190,7 +190,7 @@ public class AgendaController implements Initializable{
 
     public void preencheCombo(){
         cbServico.getItems().clear();
-        pmArray = pd.readAllProdutos();
+        pmArray = pd.readProdutosServico();
         for (ProdutoModel pm: pmArray){
             cbServico.getItems().add(pm.getNomeProd());
         }
@@ -201,15 +201,20 @@ public class AgendaController implements Initializable{
         }
     }
 
-    public void preencherTabela(ArrayList<AgendaModel> pmArray) {
+    public void preencherTabela(ArrayList<AgendaModel> amArray) {
 
         amArray.forEach((am) -> {
             listaAgenda.add(new AgendaModel(am.getId(), am.getData(), am.getHora(), am.getPm(), am.getPsm()));
         });
 
+
         colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
         colunaDia.setCellValueFactory(new PropertyValueFactory<AgendaModel, Date>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<AgendaModel, Time>("hora"));
+
+        //colunaServico.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("ProdutoModel"));
+        //colunaCliente.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("PessoaModel"));
+
         colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
         colunaCliente.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPsm().getNome()));
         tableAgenda.setItems(listaAgenda);

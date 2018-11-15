@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/controller/AgendaController.java" line="218" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/src/controller/AgendaController.java" line="223" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/AgendaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/dao/agendaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/area_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/bar_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/cabelo-abstrato-21447818.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/donut_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/heads-hairs-and-scissors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/images/line_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/agendaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/agendaView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/homeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/homeView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/vendasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/vendasView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AgendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProdutoCadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProdutoCadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/AgendaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AgendaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ProdutoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/area_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bar_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/cabelo-abstrato-21447818.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/donut_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/heads-hairs-and-scissors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/line_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AgendaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AgendaView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomeView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PessoaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PessoaView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VendasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VendasView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -338,6 +317,35 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1011781281">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1204" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1203" />
+          <entry key="SQL" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="7" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
@@ -345,37 +353,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/ProdutoCadController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/AgendaDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1340">
-              <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+            <state relative-caret-position="571">
+              <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="118" column="82" selection-start-line="118" selection-start-column="82" selection-end-line="118" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/AgendaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <state relative-caret-position="248">
+              <caret line="192" column="31" lean-forward="true" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -442,12 +441,12 @@
         <option value="$PROJECT_DIR$/src/controller/PessoaController.java" />
         <option value="$PROJECT_DIR$/src/model/ProdutoModel.java" />
         <option value="$PROJECT_DIR$/src/controller/ProdutoController.java" />
-        <option value="$PROJECT_DIR$/src/controller/ProdutoCadController.java" />
         <option value="$PROJECT_DIR$/src/model/AgendaModel.java" />
-        <option value="$PROJECT_DIR$/src/dao/ProdutoDAO.java" />
         <option value="$PROJECT_DIR$/src/controller/VendasController.java" />
         <option value="$PROJECT_DIR$/src/dao/AgendaDAO.java" />
+        <option value="$PROJECT_DIR$/src/controller/ProdutoCadController.java" />
         <option value="$PROJECT_DIR$/src/controller/AgendaController.java" />
+        <option value="$PROJECT_DIR$/src/dao/ProdutoDAO.java" />
       </list>
     </option>
   </component>
@@ -541,8 +540,8 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -559,7 +558,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542059566393" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542305062829" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -706,11 +705,12 @@
       <workItem from="1542055176271" duration="360000" />
       <workItem from="1542055817751" duration="3684000" />
       <workItem from="1542194882611" duration="1827000" />
+      <workItem from="1542292788820" duration="9572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219255000" />
+    <option name="totallyTimeSpent" value="228827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,9 +722,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.155527" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15724947" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -745,7 +746,7 @@
       <window_info anchor="bottom" id="Changes" order="11" />
       <window_info anchor="bottom" id="Profiler" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" weight="0.329718" />
-      <window_info anchor="bottom" x="45" y="443" width="1511" height="369" id="Run" order="14" weight="0.21832883" />
+      <window_info anchor="bottom" x="45" y="443" width="1511" height="369" id="Run" order="14" visible="true" weight="0.21800433" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -756,7 +757,7 @@
       <window_info anchor="right" id="Database" order="7" weight="0.13326226" />
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32995737" />
-      <window_info anchor="right" id="Messages" order="10" weight="0.21785174" />
+      <window_info anchor="right" id="Messages" order="10" weight="0.21748401" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12313433" />
@@ -923,13 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ProdutoModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/PessoaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -937,34 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/AgendaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/PessoaCadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="119" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3040">
-          <caret line="184" selection-start-line="184" selection-end-line="184" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/PessoaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
         </state>
       </provider>
     </entry>
@@ -992,31 +962,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoCadController.java">
+    <entry file="file://$PROJECT_DIR$/src/model/AgendaModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="214">
+          <caret line="17" column="93" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="93" />
+          <folding>
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/model/ProdutoModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="114" column="15" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="114" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/PessoaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoCadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1047">
+          <caret line="95" column="66" lean-forward="true" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/AgendaDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        <state relative-caret-position="571">
+          <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AgendaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="248">
+          <caret line="192" column="31" lean-forward="true" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="118" column="82" selection-start-line="118" selection-start-column="82" selection-end-line="118" selection-end-column="82" />
         </state>
       </provider>
     </entry>
