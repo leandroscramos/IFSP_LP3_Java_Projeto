@@ -64,7 +64,13 @@ public class AgendaDAO {
         ArrayList<PessoaModel> psmArray = new ArrayList<>();
 
         try{
-            stmt = con.prepareStatement("select * from agenda");
+            stmt = con.prepareStatement("select a.id, a.data, a.hora, pe.nome, pr.nome \n" +
+                    "from agenda a\n" +
+                    "join pessoa pe\n" +
+                    "on a.cliente = pe.cpf\n" +
+                    "join produto pr \n" +
+                    "on a.servico = pr.codigo\n" +
+                    "order by a.data");
             rs = stmt.executeQuery();
 
             while(rs.next()){
@@ -76,10 +82,10 @@ public class AgendaDAO {
                 amObjeto.setData(rs.getString("data"));
                 amObjeto.setHora(rs.getString("hora"));
 
-                psm.setNome(rs.getString("cliente"));
+                psm.setNome(rs.getString("pe.nome"));
                 amObjeto.setPsm(psm);
 
-                pm.setNomeProd(rs.getString("servico"));
+                pm.setNomeProd(rs.getString("pr.nome"));
                 amObjeto.setPm(pm);
 
                 amArray.add(amObjeto);

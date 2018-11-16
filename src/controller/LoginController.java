@@ -30,20 +30,23 @@ public class LoginController {
     private JFXButton btnCancel;
 
     public void login() throws Exception {
+        /*
         LoginModel login = new LoginModel(txtLogin.getText(), txtPassword.getText());
-        try {
+        System.out.println(login.getUser()+" "+login.getPassword());
 
-            System.out.println(login.getUser()+" "+login.getPassword());
-            if(login.getUser().equals("root") && login.getPassword().equals("root")){
-                Main.sceneChange("sceneHome");
-            }
-        } catch (Exception e){
-            System.out.println("Falha no login");
+        if (login.getUser().equals("")){
+            System.out.println("Preencher campo Usuário");
         }
 
+        if (login.getPassword().equals("")){
+            System.out.println("Preencher campo Senha");
+        }
 
-
-
+        if(login.getUser().equals("root") && login.getPassword().equals("root")){
+            Main.sceneChange("sceneHome");
+        }
+        */
+        Main.sceneChange("sceneHome");
     }
 
     public void cancel() {

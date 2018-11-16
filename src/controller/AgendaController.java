@@ -222,17 +222,17 @@ public class AgendaController implements Initializable{
             listaAgenda.add(new AgendaModel(am.getId(), am.getData(), am.getHora(), am.getPm(), am.getPsm()));
         });
 
-
-        colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
+        //colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
         colunaDia.setCellValueFactory(new PropertyValueFactory<AgendaModel, Date>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<AgendaModel, Time>("hora"));
+        colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
+        colunaCliente.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPsm().getNome()));
+        tableAgenda.setItems(listaAgenda);
 
         //colunaServico.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("ProdutoModel"));
         //colunaCliente.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("PessoaModel"));
 
-        colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
-        colunaCliente.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPsm().getNome()));
-        tableAgenda.setItems(listaAgenda);
+
 
     }
 }
