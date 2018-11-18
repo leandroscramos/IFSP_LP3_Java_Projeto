@@ -33,6 +33,25 @@ public class AgendaDAO {
         }
     }
 
+    public void updateAgenda (AgendaModel am) {
+        Connection con = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement("insert into agenda (data, hora, servico, cliente) values (?, ?, ?, ?)");
+            stmt.setString(1, am.getData());
+            stmt.setString(2, am.getHora());
+            stmt.setInt(3, am.getPm().getCodProd());
+            stmt.setString(4, am.getPsm().getCpf());
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
+
     public void deleteAgenda (AgendaModel am){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
