@@ -27,7 +27,7 @@ public class ProdutoDAO {
             stmt = con.prepareStatement("insert into produto (nome, categoria, valor, estoque, descricao) values (?, ?, ?, ?, ?)");
             stmt.setString(1, pm.getNomeProd().toUpperCase());
             stmt.setString(2, pm.getCategoria().toUpperCase());
-            stmt.setDouble(3, pm.getvUnitProd());
+            stmt.setDouble(3, pm.getVUnitProd());
             stmt.setInt(4, pm.getEstoque());
             stmt.setString(5, pm.getDescProd().toUpperCase());
             stmt.executeUpdate();
@@ -45,7 +45,7 @@ public class ProdutoDAO {
             stmt = con.prepareStatement("update produto set nome=?, categoria=?, valor=?, estoque=?, descricao=? where codigo=?");
             stmt.setString(1, pm.getNomeProd().toUpperCase());
             stmt.setString(2, pm.getCategoria().toUpperCase());
-            stmt.setDouble(3, pm.getvUnitProd());
+            stmt.setDouble(3, pm.getVUnitProd());
             stmt.setInt(4, pm.getEstoque());
             stmt.setString(5, pm.getDescProd().toUpperCase());
             stmt.setInt(6, pm.getCodProd());
@@ -90,7 +90,7 @@ public class ProdutoDAO {
                 pmObjeto.setCodProd(rs.getInt("codigo"));
                 pmObjeto.setNomeProd(rs.getString("nome"));
                 pmObjeto.setCategoria(rs.getString("categoria"));
-                pmObjeto.setvUnitProd(rs.getDouble("valor"));
+                pmObjeto.setVUnitProd(rs.getDouble("valor"));
                 pmObjeto.setEstoque(rs.getInt("estoque"));
                 pmObjeto.setDescProd(rs.getString("descricao"));
                 pmArray.add(pmObjeto);
@@ -125,7 +125,7 @@ public class ProdutoDAO {
                 pmObjetoServ.setCodProd(rs.getInt("codigo"));
                 pmObjetoServ.setNomeProd(rs.getString("nome"));
                 pmObjetoServ.setCategoria(rs.getString("categoria"));
-                pmObjetoServ.setvUnitProd(rs.getDouble("valor"));
+                pmObjetoServ.setVUnitProd(rs.getDouble("valor"));
                 pmObjetoServ.setEstoque(rs.getInt("estoque"));
                 pmObjetoServ.setDescProd(rs.getString("descricao"));
                 pmArray.add(pmObjetoServ);

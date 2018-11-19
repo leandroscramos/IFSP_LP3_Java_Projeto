@@ -76,14 +76,14 @@
             </Label>
             <TableView fx:id="tabelaProdutos" layoutX="62.0" layoutY="242.0" prefHeight="219.0" prefWidth="710.0">
               <columns>
-                <TableColumn fx:id="colunaQtde" prefWidth="56.0" resizable="false" text="Qtde" />
-                <TableColumn fx:id="colunaProduto" prefWidth="452.0" resizable="false" text="Produto/Serviço" />
-                  <TableColumn fx:id="colunaVUnitario" minWidth="5.0" prefWidth="100.0" resizable="false" text="Valor Unitário" />
-                  <TableColumn fx:id="colunaVTotal" minWidth="0.0" prefWidth="100.0" resizable="false" text="Valor Total" />
+                <TableColumn fx:id="colunaQtde" prefWidth="56.0" resizable="false" style="-fx-alignment: CENTER;" text="Qtde" />
+                <TableColumn fx:id="colunaProduto" prefWidth="452.0" resizable="false" style="-fx-alignment: CENTER;" text="Produto/Serviço" />
+                  <TableColumn fx:id="colunaVUnitario" minWidth="5.0" prefWidth="100.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Unitário" />
+                  <TableColumn fx:id="colunaVTotal" minWidth="0.0" prefWidth="100.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Total" />
               </columns>
             </TableView>
-            <JFXButton fx:id="btnIncluirItem" layoutX="781.0" layoutY="242.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
-            <JFXButton fx:id="btnExcluirItem" layoutX="781.0" layoutY="288.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
+            <JFXButton fx:id="btnIncluirItem" layoutX="781.0" layoutY="242.0" onAction="#incluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
+            <JFXButton fx:id="btnExcluirItem" layoutX="781.0" layoutY="288.0" onAction="#excluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
             <Label layoutX="780.0" layoutY="350.0" text="Total da Venda">
                <font>
                   <Font size="14.0" />

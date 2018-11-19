@@ -42,7 +42,7 @@ public class VendasController implements Initializable {
     private JFXButton btnIncluirItem, btnExcluirItem, btnConfirmar;
 
     @FXML
-    private TableView tabelaProdutos;
+    private TableView<ListProdutoModel> tabelaProdutos;
 
     @FXML
     private TableColumn<ListProdutoModel, Integer> colunaQtde;
@@ -64,46 +64,48 @@ public class VendasController implements Initializable {
     ArrayList<VendasModel> vmArray = new ArrayList<>();
     ArrayList<ListProdutoModel> lpArray = new ArrayList<>();
 
-    //private List<ListProdutoModel> lista = new ArrayList();
-    //private ObservableList<ListProdutoModel> ObservableLista;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         preencheCombos();
-        //btnIncluirItem.setOnAction(event -> btnIncluirItemClicked());
-        //btnExcluirItem.setOnAction(event -> btnExcluirItemClicked());
+        colunaQtde.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Integer>("qtde"));
+        colunaProduto.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
+        colunaVUnitario.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Double>("vUnitario"));
+        colunaVTotal.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Double>("vTotal"));
     }
 
-    /*
-    public void btnIncluirItemClicked() {
+    public void incluirProdutoLista() {
 
         ListProdutoModel produtos = new ListProdutoModel();
-        List<ListProdutoModel> listProd = new ArrayList<ListProdutoModel>();
-
         produtos.setQtde(Integer.parseInt(txtQtde.getText()));
         pmArray.forEach((pmObj) -> {
             if (cbProdutos.getValue().equals(pmObj.getNomeProd())) {
                 produtos.setPm(pmObj);
             }
         });
-        produtos.setvUnitario(Double.parseDouble(txtVUnit.getText()));
-        produtos.setvTotal(Double.parseDouble(txtVTotal.getText()));
+        produtos.setVUnitario(Double.parseDouble(txtVUnit.getText()));
+        produtos.setVTotal(Double.parseDouble(txtVTotal.getText()));
 
-        listProd.addAll(produtos);
+        tabelaProdutos.getItems().add(produtos);
 
-        //ObservableLista = FXCollections.observableArrayList(produtos);
-
-        colunaQtde.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Integer>("qtde"));
-        colunaProduto.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
-        colunaVUnitario.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Double>("vUnitario"));
-        colunaVTotal.setCellValueFactory(new PropertyValueFactory<ListProdutoModel, Double>("vTotal"));
-
-
-        tabelaProdutos.setItems(listProd);
-
+        txtQtde.clear();
+        txtVUnit.clear();
+        txtVTotal.clear();
+        cbProdutos.getItems().clear();
+        pmArray = pd.readAllProdutos();
+        for (ProdutoModel pm: pmArray){
+            cbProdutos.getItems().add(pm.getNomeProd());
+        }
     }
-    */
+
+    public void excluirProdutoLista() {
+
+        ObservableList<ListProdutoModel> allProducts = tabelaProdutos.getItems();
+        ObservableList<ListProdutoModel> selectedProducts = tabelaProdutos.getSelectionModel().getSelectedItems();
+
+        for( ListProdutoModel p : selectedProducts )
+            allProducts.remove(p);
+    }
 
     public void cadastrarVenda(ActionEvent e) throws IOException {
 
@@ -129,7 +131,6 @@ public class VendasController implements Initializable {
 
     public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");
-
     }
 
     public void preencheCombos(){

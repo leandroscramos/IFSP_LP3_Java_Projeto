@@ -65,7 +65,7 @@ public class ProdutoCadController implements Initializable{
         txtCodProd.setText(String.valueOf(pm.getCodProd()));
         txtNomeProd.setText(pm.getNomeProd());
         txtCategoria.setValue(String.valueOf(pm.getCategoria()));
-        txtValorProd.setText(String.valueOf(pm.getvUnitProd()));
+        txtValorProd.setText(String.valueOf(pm.getVUnitProd()));
         txtEstoque.setText(String.valueOf(pm.getEstoque()));
         txtDescProd.setText(pm.getDescProd());
     }
@@ -76,7 +76,7 @@ public class ProdutoCadController implements Initializable{
 
             pm.setNomeProd(txtNomeProd.getText());
             pm.setCategoria(txtCategoria.getSelectionModel().getSelectedItem().toString());
-            pm.setvUnitProd(Double.parseDouble(txtValorProd.getText()));
+            pm.setVUnitProd(Double.parseDouble(txtValorProd.getText()));
             pm.setEstoque(Integer.parseInt(txtEstoque.getText()));
             pm.setDescProd(txtDescProd.getText());
             pd.createProduto(pm);
@@ -97,7 +97,7 @@ public class ProdutoCadController implements Initializable{
             pm.setCodProd(Integer.parseInt(txtCodProd.getText()));
             pm.setNomeProd(txtNomeProd.getText());
             pm.setCategoria(txtCategoria.getSelectionModel().getSelectedItem().toString());
-            pm.setvUnitProd(Double.parseDouble(txtValorProd.getText()));
+            pm.setVUnitProd(Double.parseDouble(txtValorProd.getText()));
             pm.setEstoque(Integer.parseInt(txtEstoque.getText()));
             pm.setDescProd(txtDescProd.getText());
             pd.updateProduto(pm);

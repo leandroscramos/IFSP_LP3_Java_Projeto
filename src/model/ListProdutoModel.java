@@ -34,19 +34,19 @@ public class ListProdutoModel {
         this.pm = pm;
     }
 
-    public Double getvUnitario() {
+    public Double getVUnitario() {
         return vUnitario;
     }
 
-    public void setvUnitario(Double vUnitario) {
+    public void setVUnitario(Double vUnitario) {
         this.vUnitario = vUnitario;
     }
 
-    public Double getvTotal() {
+    public Double getVTotal() {
         return vTotal;
     }
 
-    public void setvTotal(Double vTotal) {
+    public void setVTotal(Double vTotal) {
         this.vTotal = vTotal;
     }
 }

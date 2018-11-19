@@ -74,15 +74,11 @@ public class ProdutoController implements Initializable {
     @FXML
     private JFXButton btnCancelar;
 
-    @FXML
-    private TextField searchProduct;
-
     ProdutoDAO pd = new ProdutoDAO();
     ProdutoModel pm = new ProdutoModel();
     ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
     ObservableList<ProdutoModel> listaProduto = FXCollections.observableArrayList();
     String flag;
-    //FilteredList filter = new FilteredList(listaProduto, e->true);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -120,7 +116,7 @@ public class ProdutoController implements Initializable {
         pm.setCodProd(tableProduto.getSelectionModel().getSelectedItem().getCodProd());
         pm.setNomeProd(tableProduto.getSelectionModel().getSelectedItem().getNomeProd());
         pm.setCategoria(tableProduto.getSelectionModel().getSelectedItem().getCategoria());
-        pm.setvUnitProd(tableProduto.getSelectionModel().getSelectedItem().getvUnitProd());
+        pm.setVUnitProd(tableProduto.getSelectionModel().getSelectedItem().getVUnitProd());
         pm.setEstoque(tableProduto.getSelectionModel().getSelectedItem().getEstoque());
         pm.setDescProd(tableProduto.getSelectionModel().getSelectedItem().getDescProd());
 
@@ -148,7 +144,7 @@ public class ProdutoController implements Initializable {
 
         pm.setCodProd(tableProduto.getSelectionModel().getSelectedItem().getCodProd());
         pm.setNomeProd(tableProduto.getSelectionModel().getSelectedItem().getNomeProd());
-        pm.setvUnitProd(tableProduto.getSelectionModel().getSelectedItem().getvUnitProd());
+        pm.setVUnitProd(tableProduto.getSelectionModel().getSelectedItem().getVUnitProd());
         pm.setDescProd(tableProduto.getSelectionModel().getSelectedItem().getDescProd());
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -170,7 +166,7 @@ public class ProdutoController implements Initializable {
     public void preencherTabela(ArrayList<ProdutoModel> pmArray) {
 
         pmArray.forEach((pm) -> {
-            listaProduto.add(new ProdutoModel(pm.getCodProd(), pm.getNomeProd(), pm.getCategoria(), pm.getvUnitProd(), pm.getEstoque(), pm.getDescProd()));
+            listaProduto.add(new ProdutoModel(pm.getCodProd(), pm.getNomeProd(), pm.getCategoria(), pm.getVUnitProd(), pm.getEstoque(), pm.getDescProd()));
         });
         colunaCodProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, Integer>("codProd"));
         colunaNomeProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("nomeProd"));
@@ -180,14 +176,6 @@ public class ProdutoController implements Initializable {
         colunaDescProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("descProd"));
         tableProduto.setItems(listaProduto);
     }
-
-    /*
-    @FXML
-    private void searchProduct(KeyEvent event){
-        searchProduc;
-        searchProduct.textProperty().addListener
-    }
-    */
 
     public void cancelar() throws Exception {
         Main.sceneChange("sceneHome");

@@ -42,9 +42,9 @@ public class ProdutoModel {
         this.nomeProd = nomeProd;
     }
 
-    public Double getvUnitProd() { return vUnitProd; }
+    public Double getVUnitProd() { return vUnitProd; }
 
-    public void setvUnitProd(Double vUnitProd) {
+    public void setVUnitProd(Double vUnitProd) {
         this.vUnitProd = vUnitProd;
     }
 
