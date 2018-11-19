@@ -2,6 +2,8 @@ package model;
 
 import javafx.beans.property.SimpleDoubleProperty;
 
+import java.text.DecimalFormat;
+
 public class ProdutoModel {
 
     private Integer codProd;

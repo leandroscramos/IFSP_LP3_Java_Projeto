@@ -38,11 +38,12 @@ public class AgendaDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("insert into agenda (data, hora, servico, cliente) values (?, ?, ?, ?)");
+            stmt = con.prepareStatement("update agenda set data=?, hora=?, servico=?, cliente=? where id=?");
             stmt.setString(1, am.getData());
             stmt.setString(2, am.getHora());
-            stmt.setInt(3, am.getPm().getCodProd());
+            stmt.setInt(3,am.getPm().getCodProd());
             stmt.setString(4, am.getPsm().getCpf());
+            stmt.setInt(5, am.getId());
             stmt.executeUpdate();
 
         } catch (SQLException ex) {

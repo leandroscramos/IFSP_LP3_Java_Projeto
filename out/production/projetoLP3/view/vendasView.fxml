@@ -38,7 +38,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="62.0" layoutY="154.0" prefHeight="40.0" prefWidth="93.0">
+            <TextField fx:id="txtQtde" layoutX="62.0" layoutY="154.0" prefHeight="40.0" prefWidth="93.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtVUnit" disable="true" layoutX="781.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
+            <TextField fx:id="txtVUnit" layoutX="781.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -64,7 +64,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtVTotal" disable="true" layoutX="890.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
+            <TextField fx:id="txtVTotal" layoutX="890.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -74,7 +74,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="listaProdutos" layoutX="62.0" layoutY="242.0" prefHeight="219.0" prefWidth="710.0">
+            <TableView fx:id="tabelaProdutos" layoutX="62.0" layoutY="242.0" prefHeight="219.0" prefWidth="710.0">
               <columns>
                 <TableColumn fx:id="colunaQtde" prefWidth="56.0" resizable="false" text="Qtde" />
                 <TableColumn fx:id="colunaProduto" prefWidth="452.0" resizable="false" text="Produto/Serviço" />
@@ -83,7 +83,7 @@
               </columns>
             </TableView>
             <JFXButton fx:id="btnIncluirItem" layoutX="781.0" layoutY="242.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
-            <JFXButton layoutX="781.0" layoutY="288.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
+            <JFXButton fx:id="btnExcluirItem" layoutX="781.0" layoutY="288.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
             <Label layoutX="780.0" layoutY="350.0" text="Total da Venda">
                <font>
                   <Font size="14.0" />
@@ -98,14 +98,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="63.0" layoutY="492.0" prefHeight="40.0" prefWidth="480.0" />
+            <TextField fx:id="txtObs" layoutX="63.0" layoutY="492.0" prefHeight="40.0" prefWidth="480.0" />
             <Label layoutX="551.0" layoutY="468.0" text="Forma de Pagamento">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <ComboBox fx:id="cbPagamento" layoutX="552.0" layoutY="492.0" prefHeight="40.0" prefWidth="221.0" />
-            <JFXButton layoutX="781.0" layoutY="492.0" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
+            <JFXButton fx:id="btnConfirmar" layoutX="781.0" layoutY="492.0" onAction="#cadastrarVenda" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
             <JFXButton fx:id="btnCancelar" layoutX="781.0" layoutY="544.0" onAction="#cancelar" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" />
          </children>
     </AnchorPane>

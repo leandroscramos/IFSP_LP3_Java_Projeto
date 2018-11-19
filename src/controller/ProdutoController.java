@@ -26,6 +26,8 @@ import javafx.util.Callback;
 import model.ProdutoModel;
 import dao.ProdutoDAO;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -72,11 +74,15 @@ public class ProdutoController implements Initializable {
     @FXML
     private JFXButton btnCancelar;
 
+    @FXML
+    private TextField searchProduct;
+
     ProdutoDAO pd = new ProdutoDAO();
     ProdutoModel pm = new ProdutoModel();
     ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
     ObservableList<ProdutoModel> listaProduto = FXCollections.observableArrayList();
     String flag;
+    //FilteredList filter = new FilteredList(listaProduto, e->true);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -105,7 +111,6 @@ public class ProdutoController implements Initializable {
         tableProduto.getItems().clear();
         pmArray = pd.readAllProdutos();
         preencherTabela(pmArray);
-
     }
 
     public void updateProduto() throws IOException {
@@ -137,7 +142,6 @@ public class ProdutoController implements Initializable {
         tableProduto.getItems().clear();
         pmArray = pd.readAllProdutos();
         preencherTabela(pmArray);
-
     }
 
     public void deletarProduto(){
@@ -163,10 +167,6 @@ public class ProdutoController implements Initializable {
         }
     }
 
-    public void cancelar() throws Exception {
-        Main.sceneChange("sceneHome");
-    }
-
     public void preencherTabela(ArrayList<ProdutoModel> pmArray) {
 
         pmArray.forEach((pm) -> {
@@ -179,8 +179,17 @@ public class ProdutoController implements Initializable {
         colunaEstoque.setCellValueFactory(new PropertyValueFactory<ProdutoModel, Integer>("estoque"));
         colunaDescProd.setCellValueFactory(new PropertyValueFactory<ProdutoModel, String>("descProd"));
         tableProduto.setItems(listaProduto);
-
     }
 
+    /*
+    @FXML
+    private void searchProduct(KeyEvent event){
+        searchProduc;
+        searchProduct.textProperty().addListener
+    }
+    */
 
+    public void cancelar() throws Exception {
+        Main.sceneChange("sceneHome");
+    }
 }

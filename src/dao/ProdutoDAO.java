@@ -59,8 +59,6 @@ public class ProdutoDAO {
     }
 
     public void deleteProduto(ProdutoModel pm){
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
 
         try{
             stmt = con.prepareStatement("delete from produto where nome=?");
@@ -78,6 +76,7 @@ public class ProdutoDAO {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
+
 
         ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
         ProdutoModel pmObjeto;
@@ -111,6 +110,7 @@ public class ProdutoDAO {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
+
 
         ArrayList<ProdutoModel> pmArray =  new ArrayList<>();
         ProdutoModel pmObjetoServ;

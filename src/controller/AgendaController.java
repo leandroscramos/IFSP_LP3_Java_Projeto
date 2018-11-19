@@ -78,6 +78,7 @@ public class AgendaController implements Initializable{
     ArrayList<PessoaModel> psmArray = new ArrayList<>();
     ArrayList<AgendaModel> amArray =  new ArrayList<>();
     ObservableList<AgendaModel> listaAgenda = FXCollections.observableArrayList();
+    String flag = "insert";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,36 +88,86 @@ public class AgendaController implements Initializable{
         preencheCombo();
     }
 
-    public void cadastrarAgendamento(ActionEvent e) throws IOException {
+    public void salvarAgendamento(ActionEvent e) throws IOException {
 
-        am.setData(txtData.getValue().toString());
-        am.setHora(txtHora.getValue().toString());
+        if (flag.equals("insert")) {
 
-        pmArray.forEach((pmObj)->{
-            if(cbServico.getValue().equals(pmObj.getNomeProd())){
-                am.setPm(pmObj);
-            }
-        });
+            am.setData(txtData.getValue().toString());
+            am.setHora(txtHora.getValue().toString());
 
-        psmArray.forEach((psmObj)->{
-            if(cbCliente.getValue().equals(psmObj.getNome())){
-                am.setPsm(psmObj);
-            }
-        });
+            pmArray.forEach((pmObj) -> {
+                if (cbServico.getValue().equals(pmObj.getNomeProd())) {
+                    am.setPm(pmObj);
+                }
+            });
 
-        ad.createAgenda(am);
+            psmArray.forEach((psmObj) -> {
+                if (cbCliente.getValue().equals(psmObj.getNome())) {
+                    am.setPsm(psmObj);
+                }
+            });
 
-        limparCampos();
+            ad.createAgenda(am);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setTitle("Mensagem de confirmação: ");
-        alert.setContentText("Agendamento realizado com sucesso!!!");
-        alert.showAndWait();
+            limparCampos();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Mensagem de confirmação: ");
+            alert.setContentText("Agendamento realizado com sucesso!!!");
+            alert.showAndWait();
+
+        }
+
+        if (flag.equals("update")) {
+
+            am.setData(txtData.getValue().toString());
+            am.setHora(txtHora.getValue().toString());
+
+            pmArray.forEach((pmObj) -> {
+                if (cbServico.getValue().equals(pmObj.getNomeProd())) {
+                    am.setPm(pmObj);
+                }
+            });
+
+            psmArray.forEach((psmObj) -> {
+                if (cbCliente.getValue().equals(psmObj.getNome())) {
+                    am.setPsm(psmObj);
+                }
+            });
+
+            ad.updateAgenda(am);
+
+            limparCampos();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Mensagem de confirmação: ");
+            alert.setContentText("Agendamento atualizado com sucesso!!!");
+            alert.showAndWait();
+        }
 
         tableAgenda.getItems().clear();
         amArray = ad.selectAllAgendas();
         preencherTabela(amArray);
+    }
+
+    public void editarAgendamento() {
+
+        flag = "update";
+
+        am.setId(tableAgenda.getSelectionModel().getSelectedItem().getId());
+        am.setData(tableAgenda.getSelectionModel().getSelectedItem().getData());
+        am.setHora(tableAgenda.getSelectionModel().getSelectedItem().getHora());
+        am.setPm(tableAgenda.getSelectionModel().getSelectedItem().getPm());
+        am.setPsm(tableAgenda.getSelectionModel().getSelectedItem().getPsm());
+
+        txtData.setValue(LocalDate.parse(String.valueOf(am.getData())));
+        txtHora.setValue(LocalTime.parse(String.valueOf(am.getHora())));
+
+        cbServico.setValue(String.valueOf(am.getPm().getNomeProd()));
+        cbCliente.setValue(String.valueOf(am.getPsm().getNome()));
+
     }
 
     public void excluirAgendamento(){
@@ -143,26 +194,13 @@ public class AgendaController implements Initializable{
         }
     }
 
-    public void editarAgendamento() {
-
-        am.setData(tableAgenda.getSelectionModel().getSelectedItem().getData());
-        am.setHora(tableAgenda.getSelectionModel().getSelectedItem().getHora());
-        am.setPm(tableAgenda.getSelectionModel().getSelectedItem().getPm());
-        am.setPsm(tableAgenda.getSelectionModel().getSelectedItem().getPsm());
-
-        txtData.setValue(LocalDate.parse(String.valueOf(am.getData())));
-        txtHora.setValue(LocalTime.parse(String.valueOf(am.getHora())));
-
-        cbServico.setValue(String.valueOf(am.getPm().getNomeProd()));
-        cbCliente.setValue(String.valueOf(am.getPsm().getNome()));
-
-    }
-
     public void cancelar() throws Exception {
+
         Main.sceneChange("sceneHome");
     }
 
     public void novoServico() throws Exception {
+
         String flag = "insert";
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ProdutoCadController.class.getResource("../view/ProdutoCadView.fxml"));
@@ -176,10 +214,10 @@ public class AgendaController implements Initializable{
         stage.initOwner(btnNovoServico.getScene().getWindow());
         stage.showAndWait();
         preencheCombo();
-
     }
 
     public void novoCliente() throws Exception {
+
         String flag = "insert";
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ProdutoCadController.class.getResource("../view/PessoaCadView.fxml"));
@@ -193,10 +231,10 @@ public class AgendaController implements Initializable{
         stage.initOwner(btnNovoCliente.getScene().getWindow());
         stage.showAndWait();
         preencheCombo();
-
     }
 
     public void limparCampos(){
+
         txtData.setValue(LocalDate.now());
         txtHora.setValue(LocalTime.now());
         cbServico.getSelectionModel().clearSelection();
@@ -204,6 +242,7 @@ public class AgendaController implements Initializable{
     }
 
     public void preencheCombo(){
+
         cbServico.getItems().clear();
         pmArray = pd.readProdutosCategoria("SERVIÇO");
         for (ProdutoModel pm: pmArray){
@@ -222,17 +261,12 @@ public class AgendaController implements Initializable{
             listaAgenda.add(new AgendaModel(am.getId(), am.getData(), am.getHora(), am.getPm(), am.getPsm()));
         });
 
-        //colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
+        colunaId.setCellValueFactory(new PropertyValueFactory<AgendaModel, Integer>("id"));
         colunaDia.setCellValueFactory(new PropertyValueFactory<AgendaModel, Date>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<AgendaModel, Time>("hora"));
         colunaServico.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPm().getNomeProd()));
         colunaCliente.setCellValueFactory((param)-> new SimpleStringProperty(param.getValue().getPsm().getNome()));
         tableAgenda.setItems(listaAgenda);
-
-        //colunaServico.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("ProdutoModel"));
-        //colunaCliente.setCellValueFactory(new PropertyValueFactory<AgendaModel, String>("PessoaModel"));
-
-
 
     }
 }
