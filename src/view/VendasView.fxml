@@ -49,62 +49,42 @@
                </font>
             </Label>
             <ComboBox fx:id="cbProdutos" layoutX="162.0" layoutY="154.0" prefHeight="40.0" prefWidth="609.0" />
-            <Label layoutX="781.0" layoutY="127.0" text="Valor Unitário">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtVUnit" layoutX="781.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="890.0" layoutY="127.0" text="Valor Total">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtVTotal" layoutX="890.0" layoutY="154.0" prefHeight="40.0" prefWidth="100.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
             <Label layoutX="63.0" layoutY="219.0" text="Lista de Produtos">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="tabelaProdutos" layoutX="62.0" layoutY="242.0" prefHeight="219.0" prefWidth="710.0">
+            <TableView fx:id="tabelaProdutos" layoutX="62.0" layoutY="272.0" prefHeight="189.0" prefWidth="929.0">
               <columns>
                 <TableColumn fx:id="colunaQtde" prefWidth="56.0" resizable="false" style="-fx-alignment: CENTER;" text="Qtde" />
-                <TableColumn fx:id="colunaProduto" prefWidth="452.0" resizable="false" style="-fx-alignment: CENTER;" text="Produto/Serviço" />
-                  <TableColumn fx:id="colunaVUnitario" minWidth="5.0" prefWidth="100.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Unitário" />
-                  <TableColumn fx:id="colunaVTotal" minWidth="0.0" prefWidth="100.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Total" />
+                <TableColumn fx:id="colunaProduto" prefWidth="445.0" resizable="false" style="-fx-alignment: CENTER;" text="Produto/Serviço" />
+                  <TableColumn fx:id="colunaVUnitario" minWidth="5.0" prefWidth="213.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Unitário" />
+                  <TableColumn fx:id="colunaVTotal" minWidth="0.0" prefWidth="214.0" resizable="false" style="-fx-alignment: CENTER;" text="Valor Total" />
               </columns>
             </TableView>
-            <JFXButton fx:id="btnIncluirItem" layoutX="781.0" layoutY="242.0" onAction="#incluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
-            <JFXButton fx:id="btnExcluirItem" layoutX="781.0" layoutY="288.0" onAction="#excluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
-            <Label layoutX="780.0" layoutY="350.0" text="Total da Venda">
+            <JFXButton fx:id="btnIncluirItem" layoutX="563.0" layoutY="219.0" onAction="#incluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #240CC4;" text="Incluir Item" textFill="WHITE" />
+            <JFXButton fx:id="btnExcluirItem" layoutX="781.0" layoutY="219.0" onAction="#excluirProdutoLista" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #DD4B39;" text="Excluir Item" textFill="WHITE" />
+            <Label layoutX="781.0" layoutY="65.0" text="Total da Venda">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTotalFinal" alignment="CENTER" layoutX="780.0" layoutY="374.0" prefHeight="68.0" prefWidth="210.0">
+            <TextField fx:id="txtTotalFinal" alignment="CENTER" layoutX="781.0" layoutY="90.0" prefHeight="104.0" prefWidth="210.0">
                <font>
-                  <Font size="40.0" />
+                  <Font size="48.0" />
                </font></TextField>
             <Label layoutX="63.0" layoutY="468.0" text="Observações">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtObs" layoutX="63.0" layoutY="492.0" prefHeight="40.0" prefWidth="480.0" />
-            <Label layoutX="551.0" layoutY="468.0" text="Forma de Pagamento">
+            <TextField fx:id="txtObs" layoutX="63.0" layoutY="492.0" prefHeight="40.0" prefWidth="491.0" />
+            <Label layoutX="563.0" layoutY="468.0" text="Forma de Pagamento">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cbPagamento" layoutX="552.0" layoutY="492.0" prefHeight="40.0" prefWidth="221.0" />
+            <ComboBox fx:id="cbPagamento" layoutX="563.0" layoutY="492.0" prefHeight="40.0" prefWidth="210.0" />
             <JFXButton fx:id="btnConfirmar" layoutX="781.0" layoutY="492.0" onAction="#cadastrarVenda" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
             <JFXButton fx:id="btnCancelar" layoutX="781.0" layoutY="544.0" onAction="#cancelar" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" />
          </children>

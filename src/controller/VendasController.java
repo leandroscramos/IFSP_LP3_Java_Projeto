@@ -36,7 +36,7 @@ public class VendasController implements Initializable {
     private ComboBox cbProdutos, cbClientes, cbPagamento;
 
     @FXML
-    private TextField txtQtde, txtVUnit, txtVTotal, txtTotalFinal, txtObs;
+    private TextField txtQtde, txtTotalFinal, txtObs;
 
     @FXML
     private JFXButton btnIncluirItem, btnExcluirItem, btnConfirmar;
@@ -63,6 +63,7 @@ public class VendasController implements Initializable {
     ArrayList<PessoaModel> psmArray = new ArrayList<>();
     ArrayList<VendasModel> vmArray = new ArrayList<>();
     ArrayList<ListProdutoModel> lpArray = new ArrayList<>();
+    Double valorTotal = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,22 +76,24 @@ public class VendasController implements Initializable {
     }
 
     public void incluirProdutoLista() {
-
+        System.out.println(valorTotal);
         ListProdutoModel produtos = new ListProdutoModel();
         produtos.setQtde(Integer.parseInt(txtQtde.getText()));
         pmArray.forEach((pmObj) -> {
             if (cbProdutos.getValue().equals(pmObj.getNomeProd())) {
                 produtos.setPm(pmObj);
+                produtos.setCodigo(pmObj.getCodProd());
+                produtos.setVUnitario(pmObj.getVUnitProd());
+                produtos.setVTotal( (pmObj.getVUnitProd()) * (Integer.parseInt(txtQtde.getText())) );
             }
         });
-        produtos.setVUnitario(Double.parseDouble(txtVUnit.getText()));
-        produtos.setVTotal(Double.parseDouble(txtVTotal.getText()));
 
         tabelaProdutos.getItems().add(produtos);
+        valorTotal = produtos.getVTotal();
+        txtTotalFinal.setText(Double.toString(valorTotal));
+
 
         txtQtde.clear();
-        txtVUnit.clear();
-        txtVTotal.clear();
         cbProdutos.getItems().clear();
         pmArray = pd.readAllProdutos();
         for (ProdutoModel pm: pmArray){
@@ -114,11 +117,13 @@ public class VendasController implements Initializable {
                 vm.setPsm(psmObj);
             }
         });
-
         vm.setObsVenda(txtObs.getText());
         vm.setPagVenda(cbPagamento.getValue().toString());
         vm.setSubTotal(Double.parseDouble(txtTotalFinal.getText()));
-        vd.createVenda(vm);
+
+        ObservableList<ListProdutoModel> listaProdutos = tabelaProdutos.getItems();
+
+        vd.createVenda(vm, listaProdutos);
 
         limparCampos();
 
@@ -159,6 +164,7 @@ public class VendasController implements Initializable {
         txtObs.setText("");
         cbPagamento.getSelectionModel().clearSelection();
         txtTotalFinal.setText("");
+        tabelaProdutos.getItems().clear();
     }
 
 }

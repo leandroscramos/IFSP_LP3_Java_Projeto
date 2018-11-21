@@ -2,6 +2,7 @@ package model;
 
 public class ListProdutoModel {
 
+    private Integer codigo;
     private Integer qtde;
     private ProdutoModel pm;
     private Double vUnitario;
@@ -11,11 +12,20 @@ public class ListProdutoModel {
 
     }
 
-    public ListProdutoModel(Integer qtde, ProdutoModel pm, Double vUnitario, Double vTotal) {
+    public ListProdutoModel(Integer codigo, Integer qtde, ProdutoModel pm, Double vUnitario, Double vTotal) {
+        this.codigo = codigo;
         this.qtde = qtde;
         this.pm = pm;
         this.vUnitario = vUnitario;
         this.vTotal = vTotal;
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
     public Integer getQtde() {
