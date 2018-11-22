@@ -63,7 +63,7 @@ public class VendasController implements Initializable {
     ArrayList<PessoaModel> psmArray = new ArrayList<>();
     ArrayList<VendasModel> vmArray = new ArrayList<>();
     ArrayList<ListProdutoModel> lpArray = new ArrayList<>();
-    Double valorTotal = null;
+    Double valorTotal = 0.0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -76,7 +76,7 @@ public class VendasController implements Initializable {
     }
 
     public void incluirProdutoLista() {
-        System.out.println(valorTotal);
+
         ListProdutoModel produtos = new ListProdutoModel();
         produtos.setQtde(Integer.parseInt(txtQtde.getText()));
         pmArray.forEach((pmObj) -> {
@@ -87,11 +87,9 @@ public class VendasController implements Initializable {
                 produtos.setVTotal( (pmObj.getVUnitProd()) * (Integer.parseInt(txtQtde.getText())) );
             }
         });
-
         tabelaProdutos.getItems().add(produtos);
-        valorTotal = produtos.getVTotal();
+        valorTotal += produtos.getVTotal();
         txtTotalFinal.setText(Double.toString(valorTotal));
-
 
         txtQtde.clear();
         cbProdutos.getItems().clear();
@@ -106,8 +104,11 @@ public class VendasController implements Initializable {
         ObservableList<ListProdutoModel> allProducts = tabelaProdutos.getItems();
         ObservableList<ListProdutoModel> selectedProducts = tabelaProdutos.getSelectionModel().getSelectedItems();
 
-        for( ListProdutoModel p : selectedProducts )
+        for( ListProdutoModel p : selectedProducts ) {
+            valorTotal -= p.getVTotal();
             allProducts.remove(p);
+        }
+        txtTotalFinal.setText(Double.toString(valorTotal));
     }
 
     public void cadastrarVenda(ActionEvent e) throws IOException {
