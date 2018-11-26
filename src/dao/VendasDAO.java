@@ -13,14 +13,16 @@ import java.sql.SQLException;
 
 public class VendasDAO {
 
-    Connection con = ConnectionFactory.getConnection();
-    PreparedStatement stmt1 = null;
-    PreparedStatement stmt2 = null;
-    PreparedStatement stmt3 = null;
+
     VendasModel vm = new VendasModel();
     ListProdutoModel lm = new ListProdutoModel();
 
     public void createVenda(VendasModel vm, ObservableList<ListProdutoModel> listaProdutos){
+
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt1 = null;
+        PreparedStatement stmt2 = null;
+        PreparedStatement stmt3 = null;
 
         try {
             stmt1 = con.prepareStatement("insert into vendas (cliente, observacao, pagamento, valorTotal) values (?, ?, ?, ?)");
@@ -35,7 +37,7 @@ public class VendasDAO {
             Integer codigo = null;
             rs = stmt2.executeQuery();
 
-            if(rs != null && rs.next()){
+            if (rs != null && rs.next()){
                 codigo = rs.getInt("codigo");
             }
 

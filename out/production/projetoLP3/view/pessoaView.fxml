@@ -29,21 +29,22 @@
             <JFXButton fx:id="btnNovo" layoutX="764.0" layoutY="552.0" onAction="#newPessoa" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00A65A;" text="Novo" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="340.0" />
             <JFXButton fx:id="btnEditar" layoutX="842.0" layoutY="552.0" onAction="#updatePessoa" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="230.0" />
             <JFXButton fx:id="btnRemover" layoutX="919.0" layoutY="555.0" onAction="#deletarPessoa" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #DD4B39;" text="Remover" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
-            <JFXTextField fx:id="txtFiltrar" layoutX="855.0" layoutY="68.0" prefHeight="40.0" prefWidth="318.0" promptText="Filtrar" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+            <JFXTextField fx:id="search" layoutX="855.0" layoutY="68.0" onKeyReleased="#search" prefHeight="40.0" prefWidth="318.0" promptText="Filtrar por nome" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
                <font>
                   <Font size="14.0" />
                </font></JFXTextField>
             <JFXButton fx:id="btnCancelar" layoutX="890.0" layoutY="550.0" onAction="#voltar" prefHeight="40.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #FC7404;" text="Voltar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-            <TableView fx:id="tablePessoa" layoutX="63.0" layoutY="117.0" prefHeight="388.0" prefWidth="924.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0">
+            <TableView fx:id="tablePessoa" layoutX="63.0" layoutY="117.0" prefHeight="388.0" prefWidth="925.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0">
               <columns>
                 <TableColumn fx:id="colunaCPF" maxWidth="125.0" prefWidth="103.0" resizable="false" style="-fx-alignment: CENTER;" text="CPF" />
-                <TableColumn fx:id="colunaNomePessoa" prefWidth="254.0" resizable="false" text="Nome" />
+                <TableColumn fx:id="colunaNomePessoa" prefWidth="254.0" resizable="false" style="-fx-alignment: CENTER;" text="Nome" />
                   <TableColumn fx:id="colunaSexo" maxWidth="175.0" prefWidth="66.0" resizable="false" style="-fx-alignment: CENTER;" text="Sexo" />
                   <TableColumn fx:id="colunaDataNasc" maxWidth="231.0" prefWidth="121.0" resizable="false" style="-fx-alignment: CENTER;" text="Nascimento" />
                   <TableColumn fx:id="colunaEmail" prefWidth="246.0" resizable="false" style="-fx-alignment: CENTER;" text="E-mail" />
                   <TableColumn fx:id="colunaCelular" editable="false" maxWidth="253.0" prefWidth="134.0" resizable="false" style="-fx-alignment: CENTER;" text="Celular" />
               </columns>
             </TableView>
+            <JFXButton fx:id="btnReportClientes" layoutX="65.0" layoutY="550.0" onAction="#reportClientes" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #4C4C4C;" text="Clientes" textFill="WHITE" />
          </children>
     </AnchorPane>
   </children>

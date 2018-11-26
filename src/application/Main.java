@@ -16,7 +16,6 @@ public class Main extends Application {
     private static Scene scenePessoas;
     private static Scene sceneProdutos;
     private static Scene sceneVendas;
-    //private static Scene sceneRelatorios;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -80,12 +79,7 @@ public class Main extends Application {
             case "sceneVendas":
                 loadVendas();
                 palco.setScene(sceneVendas);
-                break;
-            /*
-            case "sceneRelatorios":
-                palco.setScene(sceneRelatorios);
-                break;
-            */
+                break;            
         }
     }
 

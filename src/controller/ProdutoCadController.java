@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.ProdutoModel;
 import dao.ProdutoDAO;
@@ -129,6 +130,17 @@ public class ProdutoCadController implements Initializable{
         txtValorProd.setText("");
         txtEstoque.setText("");
         txtDescProd.setText("");
+    }
+
+    @FXML
+    private void upperText (KeyEvent event) {
+
+        txtNomeProd.textProperty().addListener((ov, oldValue, newValue) -> {
+            txtNomeProd.setText(newValue.toUpperCase());
+        });
+        txtDescProd.textProperty().addListener((ov, oldValue, newValue) -> {
+            txtDescProd.setText(newValue.toUpperCase());
+        });
     }
 
 }

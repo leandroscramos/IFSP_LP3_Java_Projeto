@@ -3,19 +3,25 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.PessoaModel;
 import dao.PessoaDAO;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.DatePicker;
+import util.MaskFieldUtil;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.ResourceBundle;
 
 public class PessoaCadController {
 
@@ -32,6 +38,14 @@ public class PessoaCadController {
     PessoaDAO psd = new PessoaDAO();
     private Stage st;
     String flag;
+
+    /*
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        MaskFieldUtil.foneField(this.txtCelular);
+        MaskFieldUtil.cpfField(this.txtCPF);
+    }
+    */
 
     //Funcao chamada no ProdutoController
     public void exibirDados(PessoaModel psm){
@@ -114,6 +128,20 @@ public class PessoaCadController {
         txtDataNasc.setValue(LocalDate.now());
         txtEmail.setText("");
         txtCelular.setText("");
+    }
+
+    @FXML
+    private void upperText (KeyEvent event) {
+
+        txtNome.textProperty().addListener((ov, oldValue, newValue) -> {
+            txtNome.setText(newValue.toUpperCase());
+        });
+        txtEmail.textProperty().addListener((ov, oldValue, newValue) -> {
+            txtEmail.setText(newValue.toUpperCase());
+        });
+        txtSexo.textProperty().addListener((ov, oldValue, newValue) -> {
+            txtSexo.setText(newValue.toUpperCase());
+        });
     }
 
 }

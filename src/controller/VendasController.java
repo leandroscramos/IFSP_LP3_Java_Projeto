@@ -127,6 +127,7 @@ public class VendasController implements Initializable {
         vd.createVenda(vm, listaProdutos);
 
         limparCampos();
+        valorTotal = 0.0;
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);

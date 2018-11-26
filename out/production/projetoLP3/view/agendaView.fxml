@@ -33,14 +33,14 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="dataPesquisa" layoutX="220.0" layoutY="82.0" prefHeight="25.0" prefWidth="140.0" />
+            <JFXDatePicker layoutX="220.0" layoutY="82.0" prefHeight="25.0" prefWidth="140.0" />
             <TableView fx:id="tableAgenda" layoutX="63.0" layoutY="127.0" prefHeight="413.0" prefWidth="643.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="127.0">
               <columns>
                   <TableColumn fx:id="colunaId" prefWidth="38.0" resizable="false" style="-fx-alignment: CENTER;" text="Id" />
                 <TableColumn fx:id="colunaDia" resizable="false" style="-fx-alignment: CENTER;" text="Dia" />
                 <TableColumn fx:id="colunaHora" prefWidth="73.0" resizable="false" style="-fx-alignment: CENTER;" text="Hora" />
-                  <TableColumn fx:id="colunaCliente" prefWidth="259.0" resizable="false" style="-fx-alignment: CENTER;" text="Cliente" />
-                  <TableColumn fx:id="colunaServico" prefWidth="192.0" resizable="false" style="-fx-alignment: CENTER;" text="Serviço" />
+                  <TableColumn fx:id="colunaCliente" prefWidth="232.0" resizable="false" style="-fx-alignment: CENTER;" text="Cliente" />
+                  <TableColumn fx:id="colunaServico" prefWidth="219.0" resizable="false" style="-fx-alignment: CENTER;" text="Serviço" />
               </columns>
             </TableView>
             <JFXButton fx:id="btnEditar" layoutX="494.0" layoutY="540.0" onAction="#editarAgendamento" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #240CC4;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="406.0" />

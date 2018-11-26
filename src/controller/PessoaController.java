@@ -3,9 +3,12 @@ package controller;
 import application.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import connection.ConnectionFactory;
 import dao.PessoaDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,24 +19,30 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.PessoaModel;
 import model.ProdutoModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.function.Predicate;
 
 import static application.Main.sceneChange;
 
 public class PessoaController implements Initializable{
 
     @FXML
-    private JFXTextField txtFiltrar;
+    private JFXTextField search;
 
     @FXML
     private TableView<PessoaModel> tablePessoa;
@@ -68,16 +77,50 @@ public class PessoaController implements Initializable{
     @FXML
     private JFXButton btnCancelar;
 
+    @FXML
+    private JFXButton btnReportClientes;
+
     PessoaDAO psd = new PessoaDAO();
     PessoaModel psm = new PessoaModel();
     ArrayList<PessoaModel> psmArray = new ArrayList<>();
     ObservableList<PessoaModel> listaPessoa = FXCollections.observableArrayList();
+    FilteredList filter = new FilteredList(listaPessoa, e->true);
     String flag;
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         psmArray = psd.readAllPessoa();
         preencherTabela(psmArray);
+    }
+
+    @FXML
+    private void search (KeyEvent event){
+
+        search.textProperty().addListener((ov, oldValue, newValue) -> {
+            search.setText(newValue.toUpperCase());
+        });
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
+
+            filter.setPredicate((Predicate<? super PessoaModel>) (PessoaModel psm)->{
+
+                if (newValue.isEmpty() || newValue==null){
+                    return true;
+                }
+                else if (psm.getNome().toUpperCase().contains(newValue)){
+                    return true;
+                }
+                return false;
+
+            });
+
+        });
+
+        SortedList sort = new SortedList(filter);
+        sort.comparatorProperty().bind(tablePessoa.comparatorProperty());
+        tablePessoa.setItems(sort);
     }
 
 
@@ -160,17 +203,18 @@ public class PessoaController implements Initializable{
         } else {
             alert.close();
         }
+
     }
 
     public void voltar() throws Exception {
         Main.sceneChange("sceneHome");
     }
-
     public void preencherTabela(ArrayList<PessoaModel> pmArray) {
 
         psmArray.forEach((psm) -> {
             listaPessoa.add(new PessoaModel(psm.getCpf(), psm.getNome(), psm.getSexo(), psm.getData_nasc(), psm.getEmail(), psm.getCelular()));
         });
+
         colunaCPF.setCellValueFactory(new PropertyValueFactory<PessoaModel, String>("cpf"));
         colunaNomePessoa.setCellValueFactory(new PropertyValueFactory<PessoaModel, String>("nome"));
         colunaSexo.setCellValueFactory(new PropertyValueFactory<PessoaModel, String>("sexo"));
@@ -179,6 +223,26 @@ public class PessoaController implements Initializable{
         colunaCelular.setCellValueFactory(new PropertyValueFactory<PessoaModel, String>("celular"));
         tablePessoa.setItems(listaPessoa);
 
+    }
+
+    public void reportClientes() throws IOException {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirma impressão");
+        alert.setHeaderText(null);
+        alert.setContentText("Confirma impressão do relatório de Clientes?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                JasperPrint print = JasperFillManager.fillReport("E:\\Dropbox\\[ifsp]\\4º Semetre\\LP3\\Projeto\\Fase 4\\ProjetoSisGS\\src\\reports\\reportClientes.jasper",null, con);
+                JasperViewer.viewReport(print,false);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        } else {
+            alert.close();
+        }
     }
 
 }

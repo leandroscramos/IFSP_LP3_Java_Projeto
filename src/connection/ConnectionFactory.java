@@ -24,7 +24,7 @@ public class ConnectionFactory {
             throw new RuntimeException(" Erro na conexão: ",ex);
         }
     }
-
+    /*
     public void executeSql (String sql){
 
         try {
@@ -34,7 +34,7 @@ public class ConnectionFactory {
             System.out.println("Falha ao executar SQL: "+ex.getMessage());
         }
     }
-
+    */
     public static void closeConnection(Connection con){
         try {
             if(con != null){

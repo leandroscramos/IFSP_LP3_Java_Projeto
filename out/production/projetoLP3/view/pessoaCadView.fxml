@@ -41,7 +41,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNome" layoutX="219.0" layoutY="110.0" prefHeight="40.0" prefWidth="411.0" AnchorPane.rightAnchor="10.0">
+            <TextField fx:id="txtNome" layoutX="219.0" layoutY="110.0" onKeyReleased="#upperText" prefHeight="40.0" prefWidth="411.0" AnchorPane.rightAnchor="10.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -51,7 +51,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSexo" layoutX="62.0" layoutY="187.0" prefHeight="40.0" prefWidth="107.0">
+            <TextField fx:id="txtSexo" layoutX="62.0" layoutY="187.0" onKeyReleased="#upperText" prefHeight="40.0" prefWidth="107.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -72,7 +72,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtEmail" layoutX="63.0" layoutY="268.0" prefHeight="40.0" prefWidth="403.0">
+            <TextField fx:id="txtEmail" layoutX="63.0" layoutY="268.0" onKeyReleased="#upperText" prefHeight="40.0" prefWidth="403.0">
                <font>
                   <Font size="14.0" />
                </font>

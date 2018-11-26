@@ -34,9 +34,6 @@ public class HomeController {
     private JFXButton btnVendas;
 
     @FXML
-    private JFXButton btnRelatorios;
-
-    @FXML
     private JFXButton btnSair;
 
 
