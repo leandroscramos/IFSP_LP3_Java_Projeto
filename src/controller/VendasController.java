@@ -2,6 +2,7 @@ package controller;
 
 import application.Main;
 import com.jfoenix.controls.JFXButton;
+import connection.ConnectionFactory;
 import dao.PessoaDAO;
 import dao.ProdutoDAO;
 import dao.VendasDAO;
@@ -20,15 +21,21 @@ import model.ListProdutoModel;
 import model.PessoaModel;
 import model.ProdutoModel;
 import model.VendasModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
+import javax.swing.*;
 import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class VendasController implements Initializable {
 
@@ -39,7 +46,7 @@ public class VendasController implements Initializable {
     private TextField txtQtde, txtTotalFinal, txtObs;
 
     @FXML
-    private JFXButton btnIncluirItem, btnExcluirItem, btnConfirmar;
+    private JFXButton btnIncluirItem, btnExcluirItem, btnConfirmar, btnReportVendasRealizadas;
 
     @FXML
     private TableView<ListProdutoModel> tabelaProdutos;
@@ -64,6 +71,9 @@ public class VendasController implements Initializable {
     ArrayList<VendasModel> vmArray = new ArrayList<>();
     ArrayList<ListProdutoModel> lpArray = new ArrayList<>();
     Double valorTotal = 0.0;
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -111,7 +121,7 @@ public class VendasController implements Initializable {
         txtTotalFinal.setText(Double.toString(valorTotal));
     }
 
-    public void cadastrarVenda(ActionEvent e) throws IOException {
+    public void cadastrarVenda(ActionEvent e) throws IOException, SQLException {
 
         psmArray.forEach((psmObj) -> {
             if (cbClientes.getValue().equals(psmObj.getNome())) {
@@ -129,11 +139,43 @@ public class VendasController implements Initializable {
         limparCampos();
         valorTotal = 0.0;
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+        alert2.setHeaderText(null);
+        alert2.setTitle("Mensagem de confirmação: ");
+        alert2.setContentText("Venda realizada com sucesso!!!");
+        alert2.showAndWait();
+
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        stmt = con.prepareStatement("select max(codigo) as codigo from vendas");
+        ResultSet rs = null;
+        Integer codigoVenda = null;
+        rs = stmt.executeQuery();
+
+        if (rs != null && rs.next()) {
+            codigoVenda = rs.getInt("codigo");
+        }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirma impressão");
         alert.setHeaderText(null);
-        alert.setTitle("Mensagem de confirmação: ");
-        alert.setContentText("Venda realizada com sucesso!!!");
-        alert.showAndWait();
+        alert.setContentText("Confirma impressão do comprovante da venda?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                HashMap filtro = new HashMap();
+                filtro.put("codigoVenda", codigoVenda);
+                JasperPrint print = JasperFillManager.fillReport("E:\\Dropbox\\[ifsp]\\4º Semetre\\LP3\\Projeto\\Fase 4\\ProjetoSisGS\\src\\reports\\reportVenda.jasper",filtro, con);
+                JasperViewer.viewReport(print,false);
+            } catch (Exception event) {
+                JOptionPane.showMessageDialog(null, event);
+            }
+        } else {
+            alert.close();
+        }
+        ConnectionFactory.closeConnection(con, stmt);
+
     }
 
     public void cancelar() throws Exception {
@@ -167,6 +209,26 @@ public class VendasController implements Initializable {
         cbPagamento.getSelectionModel().clearSelection();
         txtTotalFinal.setText("");
         tabelaProdutos.getItems().clear();
+    }
+
+    public void reportVendasRealizadas() throws IOException {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirma impressão");
+        alert.setHeaderText(null);
+        alert.setContentText("Confirma impressão do relatório de vendas?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                JasperPrint print = JasperFillManager.fillReport("E:\\Dropbox\\[ifsp]\\4º Semetre\\LP3\\Projeto\\Fase 4\\ProjetoSisGS\\src\\reports\\reportVendasRealizadas.jasper",null, con);
+                JasperViewer.viewReport(print,false);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        } else {
+            alert.close();
+        }
     }
 
 }

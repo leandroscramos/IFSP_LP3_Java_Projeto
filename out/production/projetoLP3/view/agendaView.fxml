@@ -28,13 +28,13 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="90.0" text="Agendamentos do dia">
+            <Label disable="true" layoutX="63.0" layoutY="90.0" text="Agendamentos do dia" visible="false">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXDatePicker layoutX="220.0" layoutY="82.0" prefHeight="25.0" prefWidth="140.0" />
-            <TableView fx:id="tableAgenda" layoutX="63.0" layoutY="127.0" prefHeight="413.0" prefWidth="643.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="127.0">
+            <JFXDatePicker disable="true" layoutX="220.0" layoutY="82.0" prefHeight="25.0" prefWidth="140.0" visible="false" />
+            <TableView fx:id="tableAgenda" layoutX="63.0" layoutY="96.0" prefHeight="444.0" prefWidth="643.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="96.0">
               <columns>
                   <TableColumn fx:id="colunaId" prefWidth="38.0" resizable="false" style="-fx-alignment: CENTER;" text="Id" />
                 <TableColumn fx:id="colunaDia" resizable="false" style="-fx-alignment: CENTER;" text="Dia" />

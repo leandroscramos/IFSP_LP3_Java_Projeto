@@ -2,34 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="478747a6-7a53-4435-a4cc-3de51d246ce9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace (Cópia em conflito de DESKTOP-V1ER3RB 2018-11-25).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/dump-24-11-2018-BD-Alimentado.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/bcprov-jdk15on-1.52.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/castor-core-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/castor-xml-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-beanutils-1.9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-collections-3.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-digester-2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ecj-4.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/icu4j-57.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/itext-2.1.7.js6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-annotations-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-core-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-databind-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jasperreports-6.7.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.inject-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jcommon-1.0.23.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jfreechart-1.0.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/stax-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/stax-api-1.0-2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/stax-api-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportProdutos.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportProdutos.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportProdutos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportServicos.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportServicos.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportServicos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/util/MaskFieldUtil$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/util/MaskFieldUtil$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/util/MaskFieldUtil$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/util/MaskFieldUtil$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoLP3/util/MaskFieldUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportClientes.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportClientes.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportClientes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportProdutos.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportProdutos.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportProdutos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportServicos.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportServicos.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reports/reportServicos.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/MaskFieldUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/connection/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/connection/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/AgendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/AgendaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/VendasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/VendasController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/dao/pessoaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/dao/pessoaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/dao/produtoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/dao/produtoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/homeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/homeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/pessoaCadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/pessoaCadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/pessoaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/pessoaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/produtoCadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/produtoCadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/controller/produtoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/controller/produtoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/dao/agendaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/dao/agendaDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/dao/vendasDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/dao/vendasDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jasper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/reports/reportClientes.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/agendaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/agendaView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/homeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/homeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaCadView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaCadView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/pessoaView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/produtoCadView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/produtoCadView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/produtoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/produtoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoLP3/view/vendasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoLP3/view/vendasView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoLP3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projetoLP3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AgendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PessoaCadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PessoaCadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PessoaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PessoaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProdutoCadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProdutoCadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProdutoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/VendasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VendasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/PessoaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PessoaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ProdutoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/AgendaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AgendaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/VendasDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/VendasDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportClientes.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportClientes.jasper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportClientes.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportClientes.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportVenda.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportVenda.jasper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportVenda.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportVenda.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportVenda_subreport1.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportVenda_subreport1.jasper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reports/reportVenda_subreport1.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports/reportVenda_subreport1.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/AgendaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AgendaView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PessoaCadView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PessoaCadView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PessoaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PessoaView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ProdutoCadView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProdutoCadView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ProdutoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProdutoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VendasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VendasView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -340,66 +396,43 @@
     <session id="1436530257">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.74" value="1" />
-          <entry key="project.open.time.75" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="632" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="632" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
     <session id="418962941">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.38" value="2" />
-          <entry key="project.open.time.39" value="2" />
           <entry key="project.open.time.48" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1259" />
+          <entry key="java" value="1174" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1259" />
+          <entry key="JAVA" value="1174" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="4" />
-          <entry key="java" value="24" />
+          <entry key="java" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="24" />
+          <entry key="JAVA" value="18" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
@@ -410,11 +443,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/ProdutoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="44" column="81" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+            <state relative-caret-position="379">
+              <caret line="96" column="34" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="96" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-136">
+              <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/PessoaController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -466,14 +541,19 @@
         <option value="$PROJECT_DIR$/src/view/PessoaCadView.fxml" />
         <option value="$PROJECT_DIR$/src/controller/ProdutoEditController.java" />
         <option value="$PROJECT_DIR$/src/model/PessoaModel.java" />
+        <option value="$PROJECT_DIR$/src/dao/PessoaDAO.java" />
         <option value="$PROJECT_DIR$/src/view/PessoaView.fxml" />
         <option value="$PROJECT_DIR$/src/model/AgendaModel.java" />
         <option value="$PROJECT_DIR$/src/model/LoginModel.java" />
         <option value="$PROJECT_DIR$/src/dao/LoginDAO.java" />
+        <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/model/VendasModel.java" />
         <option value="$PROJECT_DIR$/src/model/ProdutoModel.java" />
+        <option value="$PROJECT_DIR$/src/dao/ProdutoDAO.java" />
         <option value="$PROJECT_DIR$/src/model/ListProdutoModel.java" />
         <option value="$PROJECT_DIR$/src/reports/testeReport.java" />
+        <option value="$PROJECT_DIR$/src/controller/VendasController.java" />
+        <option value="$PROJECT_DIR$/src/dao/VendasDAO.java" />
         <option value="$PROJECT_DIR$/src/view/ProdutoView.fxml" />
         <option value="$PROJECT_DIR$/src/util/MaskFieldUtil.java" />
         <option value="$PROJECT_DIR$/src/dao/AgendaDAO.java" />
@@ -485,11 +565,6 @@
         <option value="$PROJECT_DIR$/src/controller/PessoaController.java" />
         <option value="$PROJECT_DIR$/src/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
-        <option value="$PROJECT_DIR$/src/dao/VendasDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/PessoaDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/ProdutoDAO.java" />
-        <option value="$PROJECT_DIR$/src/controller/VendasController.java" />
-        <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
       </list>
     </option>
   </component>
@@ -499,11 +574,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="951" />
+    <option name="y" value="30" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -511,8 +586,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -524,6 +597,12 @@
               <item name="ProjetoSisGS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoSisGS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetoSisGS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoSisGS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoSisGS" type="b2602c69:ProjectViewProjectNode" />
@@ -557,7 +636,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,7 +647,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543258595488" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543190509071" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Jaspersoft/iReport-5.6.0/ireport/modules/ext/xml-apis.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -670,22 +751,17 @@
       <workItem from="1543167864719" duration="532000" />
       <workItem from="1543173431494" duration="2070000" />
       <workItem from="1543177635821" duration="733000" />
-      <workItem from="1543235319865" duration="10215000" />
-      <workItem from="1543253315812" duration="3988000" />
-      <workItem from="1543258542226" duration="134000" />
-      <workItem from="1543259516008" duration="101000" />
-      <workItem from="1543263812938" duration="640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366894000" />
+    <option name="totallyTimeSpent" value="351647000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17700455" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1652452" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -706,7 +782,7 @@
       <window_info anchor="bottom" id="Changes" order="11" />
       <window_info anchor="bottom" id="Profiler" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" weight="0.329718" />
-      <window_info active="true" anchor="bottom" x="45" y="443" width="1511" height="369" id="Run" order="14" visible="true" weight="0.2967213" />
+      <window_info active="true" anchor="bottom" x="45" y="443" width="1511" height="369" id="Run" order="14" visible="true" weight="0.2451193" />
       <window_info anchor="bottom" id="Spring" order="15" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
@@ -718,7 +794,7 @@
       <window_info anchor="right" id="Database" order="7" weight="0.13326226" />
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32995737" />
-      <window_info anchor="right" id="Messages" order="10" weight="0.21482602" />
+      <window_info anchor="right" id="Messages" order="10" weight="0.21588486" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18229954" />
@@ -778,10 +854,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reports/testeReport.java" />
+    <entry file="file://$PROJECT_DIR$/src/dao/VendasDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ListProdutoModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/VendasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -808,6 +898,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
           <caret line="132" column="4" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,6 +911,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/AgendaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AgendaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
@@ -825,80 +925,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="269" selection-start-line="269" selection-end-line="269" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/connection/ConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/VendasDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="53" column="55" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/VendasController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3980">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/PessoaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PessoaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4060">
-          <caret line="240" column="22" selection-start-line="229" selection-start-column="8" selection-end-line="244" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/AgendaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2260">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        <state relative-caret-position="340">
+          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ProdutoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="-136">
+          <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ProdutoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="96" column="34" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="96" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PessoaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="238">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="44" column="81" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+        <state relative-caret-position="368">
+          <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -960,6 +1031,7 @@
             <option name="proportions">
               <list>
                 <option value="0.36551723" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

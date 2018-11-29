@@ -87,6 +87,7 @@
             <ComboBox fx:id="cbPagamento" layoutX="563.0" layoutY="492.0" prefHeight="40.0" prefWidth="210.0" />
             <JFXButton fx:id="btnConfirmar" layoutX="781.0" layoutY="492.0" onAction="#cadastrarVenda" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00A65A;" text="Confirmar" textFill="WHITE" />
             <JFXButton fx:id="btnCancelar" layoutX="781.0" layoutY="544.0" onAction="#cancelar" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #FC7404;" text="Cancelar/Voltar" textFill="WHITE" />
+            <JFXButton fx:id="btnReportVendasRealizadas" layoutX="65.0" layoutY="544.0" onAction="#reportVendasRealizadas" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #74747C;" text="Vendas realizadas" textFill="WHITE" />
          </children>
     </AnchorPane>
   </children>

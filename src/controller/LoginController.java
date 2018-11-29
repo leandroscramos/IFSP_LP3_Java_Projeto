@@ -30,7 +30,7 @@ public class LoginController {
     private JFXButton btnCancel;
 
     public void login() throws Exception {
-        /*
+
         LoginModel login = new LoginModel(txtLogin.getText(), txtPassword.getText());
         System.out.println(login.getUser()+" "+login.getPassword());
 
@@ -45,8 +45,8 @@ public class LoginController {
         if(login.getUser().equals("root") && login.getPassword().equals("root")){
             Main.sceneChange("sceneHome");
         }
-        */
-        Main.sceneChange("sceneHome");
+
+        //Main.sceneChange("sceneHome");
     }
 
     public void cancel() {

@@ -82,7 +82,7 @@ public class ProdutoDAO {
         ProdutoModel pmObjeto;
 
         try{
-            stmt = con.prepareStatement("select * from produto");
+            stmt = con.prepareStatement("select * from produto order by nome");
             rs = stmt.executeQuery();
 
             while(rs.next()){
@@ -116,7 +116,7 @@ public class ProdutoDAO {
         ProdutoModel pmObjetoServ;
 
         try{
-            stmt = con.prepareStatement("select * from produto where categoria=?");
+            stmt = con.prepareStatement("select * from produto where categoria=?  order by nome");
             stmt.setString(1, categoria);
             rs = stmt.executeQuery();
 

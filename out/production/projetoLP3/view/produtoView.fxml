@@ -45,7 +45,7 @@
               </columns>
             </TableView>
             <JFXButton fx:id="btnReportProdutos" layoutX="63.0" layoutY="550.0" onAction="#reportProdutos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #4C4C4C;" text="Produtos" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="63.0" />
-            <JFXButton fx:id="btnReportServicos" layoutX="169.0" layoutY="550.0" onAction="#reportServicos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #848484;" text="Serviços" textFill="WHITE" />
+            <JFXButton fx:id="btnReportServicos" layoutX="170.0" layoutY="550.0" onAction="#reportServicos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #848484;" text="Serviços" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="170.0" />
          </children>
     </AnchorPane>
   </children>

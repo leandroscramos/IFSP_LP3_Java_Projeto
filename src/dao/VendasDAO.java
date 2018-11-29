@@ -17,7 +17,7 @@ public class VendasDAO {
     VendasModel vm = new VendasModel();
     ListProdutoModel lm = new ListProdutoModel();
 
-    public void createVenda(VendasModel vm, ObservableList<ListProdutoModel> listaProdutos){
+    public void createVenda(VendasModel vm, ObservableList<ListProdutoModel> listaProdutos) {
 
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt1 = null;
@@ -37,26 +37,24 @@ public class VendasDAO {
             Integer codigo = null;
             rs = stmt2.executeQuery();
 
-            if (rs != null && rs.next()){
+            if (rs != null && rs.next()) {
                 codigo = rs.getInt("codigo");
             }
 
-            for( ListProdutoModel lp : listaProdutos ){
+            for (ListProdutoModel lp : listaProdutos) {
                 stmt3 = con.prepareStatement("insert into vendasprodutos (codigovenda, codigoProduto, qtde) values (" + codigo + ", ?, ?)");
                 stmt3.setInt(1, lp.getCodigo());
                 stmt3.setInt(2, lp.getQtde());
                 stmt3.executeUpdate();
             }
 
-
-
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
         } finally {
             ConnectionFactory.closeConnection(con, stmt1);
             ConnectionFactory.closeConnection(con, stmt2);
             ConnectionFactory.closeConnection(con, stmt3);
         }
-
     }
+
 }

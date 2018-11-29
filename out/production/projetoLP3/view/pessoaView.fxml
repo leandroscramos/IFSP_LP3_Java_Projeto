@@ -44,7 +44,7 @@
                   <TableColumn fx:id="colunaCelular" editable="false" maxWidth="253.0" prefWidth="134.0" resizable="false" style="-fx-alignment: CENTER;" text="Celular" />
               </columns>
             </TableView>
-            <JFXButton fx:id="btnReportClientes" layoutX="65.0" layoutY="550.0" onAction="#reportClientes" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #4C4C4C;" text="Clientes" textFill="WHITE" />
+            <JFXButton fx:id="btnReportClientes" layoutX="65.0" layoutY="550.0" onAction="#reportClientes" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #4C4C4C;" text="Clientes" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="65.0" />
          </children>
     </AnchorPane>
   </children>

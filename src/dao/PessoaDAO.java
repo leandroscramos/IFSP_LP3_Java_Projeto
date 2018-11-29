@@ -81,7 +81,7 @@ public class PessoaDAO {
         PessoaModel psmObjeto;
 
         try{
-            stmt = con.prepareStatement("select * from pessoa");
+            stmt = con.prepareStatement("select * from pessoa order by nome");
             rs = stmt.executeQuery();
 
             while(rs.next()){

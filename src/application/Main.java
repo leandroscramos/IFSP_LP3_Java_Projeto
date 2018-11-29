@@ -79,7 +79,7 @@ public class Main extends Application {
             case "sceneVendas":
                 loadVendas();
                 palco.setScene(sceneVendas);
-                break;            
+                break;
         }
     }
 
