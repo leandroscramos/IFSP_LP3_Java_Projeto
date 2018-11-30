@@ -11,3 +11,4 @@ Sistema para Gerenciamento de Salões de beleza ou Barbearia:
 - Relatórios de Clientes, Produtos, Serviços.
 
 -----------------------------------------------------------------------------------------------------------------------
+![image](https://user-images.githubusercontent.com/12849624/49305649-f10a2800-f4b6-11e8-8fc3-eff5e2510864.png)
