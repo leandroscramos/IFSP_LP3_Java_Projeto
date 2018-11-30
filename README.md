@@ -3,7 +3,7 @@ Projeto criado para a disciplina de Linguagem de Programação 3 do curso de ADS
 
 -----------------------------------------------------------------------------------------------------------------------
 
-##Sistema para Gerenciamento de Salões de beleza ou Barbearia:
+Sistema para Gerenciamento de Salões de beleza ou Barbearia:
 
 - CRUD de Clientes, Produtos e Serviços;
 - Agendamento de horários;
