@@ -1,4 +1,4 @@
-# Projeto_LP3_2018_2
+# Projeto_Agenda_Salao_Beleza
 Projeto criado para a disciplina de Linguagem de Programação 3 do curso de ADS do IFSP São Carlos realizada no 2º semestre de 2018.
 
 -----------------------------------------------------------------------------------------------------------------------
